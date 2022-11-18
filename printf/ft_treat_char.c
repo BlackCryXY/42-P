@@ -12,11 +12,8 @@
 
 #include "printf.h"
 
-int	ft_treat_char(va_list list)
+int	ft_treat_char(char c , int *len)
 {
-	char	c;
-
-	c = va_arg(list, int);
-	ft_putchar(c);
-	return (1);
+	write(1, &c, 1);
+	(*len)++;
 }

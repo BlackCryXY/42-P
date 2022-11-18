@@ -12,15 +12,20 @@
 
 #include "printf.h"
 
-int	ft_treat_string(va_list list)
+void	ft_treat_string(char *argumentos, int *len)
 {
-	int		count_char;
-	char	*str;
+	size_t	i;
 
-	str = va_arg(list, char *);
-	if (!str)
-		str = "(null)";
-	count_char = ft_strlen(str);
-	ft_putstr(str);
-	return (count_char);
+	i = 0;
+	if (!argumentos)
+	{
+		write(1, "(null)", 6);
+		(*len) += 6;
+		return ;
+	}
+	while (argumentos[i] != '\0')
+	{
+		ft_treat_char(argumentos[i], len);
+		i++;
+	}
 }
