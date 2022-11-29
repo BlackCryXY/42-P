@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_treat_string.c                                  :+:      :+:    :+:   */
+/*   ft_words.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
+/*   By: prossi <prossi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 10:28:47 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/11/17 12:09:48 by tsantiag         ###   ########.fr       */
+/*   Created: 2022/06/15 16:18:05 by prossi            #+#    #+#             */
+/*   Updated: 2022/06/15 16:55:14 by prossi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_treat_string(char *argumentos, int *len)
+//character
+
+void	ft_putcharacter_length(char character, int *length)
+{
+	write(1, &character, 1);
+	(*length)++;
+}
+
+//string
+
+void	ft_string(char *args, int *length)
 {
 	size_t	i;
 
 	i = 0;
-	if (!argumentos)
+	if (!args)
 	{
 		write(1, "(null)", 6);
-		(*len) += 6;
+		(*length) += 6;
 		return ;
 	}
-	while (argumentos[i] != '\0')
+	while (args[i] != '\0')
 	{
-		ft_treat_char(argumentos[i], len);
+		ft_putcharacter_length(args[i], length);
 		i++;
 	}
 }

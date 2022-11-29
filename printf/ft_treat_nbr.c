@@ -12,55 +12,23 @@
 
 #include "printf.h"
 
-int	ft_sizeint(unsigned int n)
+void	ft_treat_nbr(int nbr, int len)
 {
-	int	size;
-
-	size = 0;
-	if (n < 0)
+	if (nbr == -2147483648)
 	{
-		size++;
-		n = -n;
+		write(1, "-2147483648", 11);
+		(*len) += 11;
+		return ;
 	}
-	while (n != 0)
+	if (nbr < 0)
 	{
-		size++;
-		n = n / 10;
+		ft_treat_char('-', len);
+		ft_treat_nbr(nbr * -1, len);
 	}
-	return (size);
-}
-
-int	ft_putnbr(unsigned int nu)
-{
-	int	char_count;
-
-	char_count = ft_sizeint(nu);
-	if (nu / 10 != 0)
+	else
 	{
-		ft_putnbr(nu / 10);
+		if (nbr > 9)
+			ft_treat_nbr(nbr / 10, len);
+		ft_treat_char(nbr % 10 + '0', len);
 	}
-	ft_putchar((nu % 10) + '0');
-	return (char_count);
-}
-
-int	ft_treat_nbr(va_list list)
-{
-	int	count_char;
-	int	i;
-
-	i = va_arg(list, int);
-	if (i == 0)
-	{
-		ft_putchar('0');
-		return (1);
-	}
-	count_char = 0;
-	if (i < 0)
-	{
-		ft_putchar('-');
-		i = -i;
-		count_char++;
-	}
-	count_char = ft_putnbr((unsigned int)i);
-	return (count_char);
 }
