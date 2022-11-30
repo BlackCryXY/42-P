@@ -28,6 +28,7 @@ static char	*next_line(int fd, char *buffer, char *joiner)
 	char	*tmp;
 
 	read_line = 1;
+	//read_line = read
 	while (read_line != '\0')
 	{
 		read_line = read(fd, buffer, BUFFER_SIZE);
@@ -44,8 +45,9 @@ static char	*next_line(int fd, char *buffer, char *joiner)
 		tmp = NULL;
 		if (ft_strchr (buf, '\n'))
 			break;
+		//read_line = read(fd, buffer, BUFFER_SIZE);
 	}
-	return (backup);
+	return (tmp);
 }
 
 static char	*extraer(char *line)
@@ -74,7 +76,7 @@ char	*get_next_line(int fd)
 	char	*line;
 	static char	*buffer;	
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0 ) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer, 0 ) < 0)
 		return (NULL)
 	buffer = (char *)(malloc(sizeof(char) * (BUFFER_SIZE + 1)));
 	if (!buffer)
