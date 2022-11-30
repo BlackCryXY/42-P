@@ -22,54 +22,68 @@ mas que leer o si ocurrio un error */
 #include "get_next_line.h"
 
 
+static char	*next_line(int fd, char *buffer, char *joiner)
+{
+	int		read_line;
+	char	*tmp;
 
+	read_line = 1;
+	while (read_line != '\0')
+	{
+		read_line = read(fd, buffer, BUFFER_SIZE);
+		if (read_line < 0)
+			return (NULL);
+		else if (read_line == 0)
+			break;
+		buf[read_line] = '\0';
+		if (!joiner)
+			joiner = 0;
+		tmp = joiner;
+		joiner = ft_strjoin(tmp, buffer);
+		free(tmp);
+		tmp = NULL;
+		if (ft_strchr (buf, '\n'))
+			break;
+	}
+	return (backup);
+}
 
+static char	*extraer(char *line)
+{
+	size_t		count;
+	char	*tmp;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	count = 0;
+	while (line[count] != '\n' && line[count] != '\0')
+		count++;
+	if (line[count] == '\0' || line[1] == '\0')
+		return (0);
+	tmp = ft_substr(line, count + 1, ft_strlen(line) - count);
+	if (tmp == '\0')
+	{
+		free(tmp);
+		tmp = NULL;
+	}
+	line[count + 1] = '\0';
+	return (backup);
+}
 
 char	*get_next_line(int fd)
 {
-	 char	*buffer;
-	 static	char	line;
+	char	*backup;
+	char	*line;
+	static char	*buffer;	
 
-
-	if (fd == -1 || buffer == NULL || read(fd, buffer, 0 ) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0 ) < 0)
 		return (NULL)
 	buffer = (char *)(malloc(sizeof(char) * (BUFFER_SIZE + 1)));
 	if (!buffer)
-	{
-		return (NULL)
-		free(buffer);
-	}
-	
-
+		return (NULL);
+	line =  next_line(fd, backup, buffer);
+	free(backup);
+	backup = NULL;
+	if (!line)
+		return (NULL);
+	buffer = extractor(line);
+	return (line);
+}
