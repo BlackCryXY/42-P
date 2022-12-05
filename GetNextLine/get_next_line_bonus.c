@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
+/*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 12:50:17 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/12/03 10:56:08 by tsantiag         ###   ########.fr       */
+/*   Created: 2022/12/02 13:55:16 by tsantiag          #+#    #+#             */
+/*   Updated: 2022/12/02 14:02:05 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*fd = un entero
-Esta funcion toma el archivo referenciado por el file descriptor 'fd'
-y sin importar el BUFFER_SIZE dado lee e imprime en pantalla la primera
-linea del archivo dado, con ayuda de la funcion read (ver man read). Asi,
-cada vez que se ejecute la funcion devolvera la siguiente linea hasta 
-terminar el archivo. 
-Devuelve = la primera linea leida correspondiente o NULL si no hay nada
-mas que leer o si ocurrio un error */
-
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*next_line(int fd, char *buffer, char *backup)
 {
@@ -86,3 +77,24 @@ char	*get_next_line(int fd)
 	backup = extraer(line);
 	return (line);
 }
+/*
+int	main(int argc, char **argv)
+{
+	int		fd;
+	char	*line;
+
+	fd = open(argv[1], O_RDONLY);
+	if (!argv[1])
+		return (0);
+	if (argc == 2)
+	{
+		line = get_next_line(fd);
+		while (line != 0)
+		{
+			printf("%s", line);
+			free(line);
+		}
+		close(fd);
+		return (0);
+	}
+}*/

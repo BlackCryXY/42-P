@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
+/*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 12:51:15 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/12/02 13:51:43 by tsantiag         ###   ########.fr       */
+/*   Created: 2022/12/02 13:59:43 by tsantiag          #+#    #+#             */
+/*   Updated: 2022/12/02 14:00:41 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
 {
