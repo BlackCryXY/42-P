@@ -1,0 +1,18 @@
+Estas son las reglas de los mapas.
+
+0 es un espacio bacio -> empty space
+1 es un muro -> wall
+C es un coleccionable -> collectible
+E es la salida -> map exit
+P es donde comienza el personaje -> player's starting point
+
+El mapa debe contener 1 salida, por lo menos 1 coleccionable y 1 posicion de comienzo.
+//Si el mapa tiene characteres duplicados (exit/start), debe salir un error message.//
+El mapa debe ser rectangular.
+El mapa debe estar cerrado/recubierto de muros, si no lo esta, este debe reenviar un error.
+El mapa debe ser capable de ser completado.
+
+//El programa debe ser capable de crear cualquier mapa si respecta las reglas//
+
+Si dentro del mapa hay algun error, este debe salir de una manera limpia y mostrat "Error\n", seguido de un mensaje 
+explicito de tu gusto. "La cagaste prro, intenta denuevo, carita fachera facherita".
