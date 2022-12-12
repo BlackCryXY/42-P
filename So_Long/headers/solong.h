@@ -14,6 +14,7 @@
 # define SOLONG_H
 
 #include <sys/stat.h>
+#include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
@@ -23,13 +24,31 @@
 #include "../headers/get_next_line.h"
 #include "../headers/mlx.h"
 
-typedef struct game{
+typedef struct t_game
+{
+	int	fd;
+	int	heightmap;
+	int	widthmap;
+	int	playercount;
+	int	columncount;
+	int	exitcount;
+	int	x_axis;
+	int	y_axis;
+	int	counter;
+	int	collectables;
 
+	char	**map;
 
-
-
+	void	*floor;
+	void	*barrier;
+	void	*player;
+	void	*exit;
+	void	*collectables;
+	void	*mlxpointer;
+	void	*winpointer;
 
 } t_complete
 
+int	map_reading(t_complete *game, char **argv);
 
 #endif
