@@ -30,7 +30,7 @@ typedef struct t_game
 	int	heightmap;
 	int	widthmap;
 	int	playercount;
-	int	columncount;
+	int	colleccount;
 	int	exitcount;
 	int	x_axis;
 	int	y_axis;
