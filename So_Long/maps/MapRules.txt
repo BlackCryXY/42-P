@@ -16,3 +16,5 @@ El mapa debe ser capable de ser completado.
 
 Si dentro del mapa hay algun error, este debe salir de una manera limpia y mostrat "Error\n", seguido de un mensaje 
 explicito de tu gusto. "La cagaste prro, intenta denuevo, carita fachera facherita".
+
+//Caso especifico -> Si dentro del mapa la salida bloquea la unica manera de conseguir el colecionable entonces debe dar error/ dejar pasar por la salida

@@ -6,36 +6,43 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:51:27 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/12/07 14:37:11 by tsantiag         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:44:13 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SOLONG_H
 # define SOLONG_H
 
-#include <sys/stat.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <math.h>
-#include "../headers/get_next_line.h"
-#include "../headers/mlx.h"
+# include "./get_next_line.h"
+# include "./mlx.h"
+# include "./ft_printf.h"
+# include <errno.h>
+# include <fcntl.h>
+# include <math.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <sys/stat.h>
+# include <unistd.h>
 
-typedef struct t_game
+# define K_ESC 650307
+# define K_UP 119
+# define K_LEFT 115
+# define K_RIGHT 100
+# define K_DOWN 115
+
+typedef struct s_game
 {
-	int	fd;
-	int	heightmap;
-	int	widthmap;
-	int	playercount;
-	int	colleccount;
-	int	exitcount;
-	int	x_axis;
-	int	y_axis;
-	int	counter;
-	int	collectables;
+	int		fd;
+	int		heightmap;
+	int		widthmap;
+	int		playercount;
+	int		colleccount;
+	int		exitcount;
+	int		x_axis;
+	int		y_axis;
+	int		counter;
+	int		collectables;
 
 	char	**map;
 
@@ -43,12 +50,19 @@ typedef struct t_game
 	void	*barrier;
 	void	*player;
 	void	*exit;
-	void	*collectables;
+	void	*collectable;
 	void	*mlxpointer;
 	void	*winpointer;
 
-} t_complete
+} t_game;
 
-int	map_reading(t_complete *game, char **argv);
-
+	int	map_reading(t_game *game, char **argv);
+	int	controls_working(int command, t_game *game);
+	void	check_map_errors(t_game *game);
+	void	check_characters_errors(t_game *game);
+	void	adding_in_graphics(t_game *game);
+	void	place_images_in_game(t_game *game);
+	void	place_collectable(t_game *game, int height, int width);
+	void	place_player(t_game *game, int height, int width);
+	int	exit_game(t_game *game);
 #endif
