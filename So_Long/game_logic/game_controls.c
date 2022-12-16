@@ -1,11 +1,11 @@
-static int	right_move(t_complete *game, int i, int j)
+static int	right_move(t_game *game, int i, int j)
 {
 	if (game->map[j][i] == 'E')
 	{
 		if (game->collectables != 0)
 			return (0);
-		ft_printf("\nGanaste paspi!\n");
-		exit_point(game);
+		ft_ft_printf("\nGanaste paspi!\n");
+		exit_game(game);
 	}
 	if (game->map[j][i] == '0')
 	{
@@ -25,7 +25,7 @@ static int	right_move(t_complete *game, int i, int j)
 	return (1);
 }
 
-static int	keyboard_w_s(t_complete *game, int movement)
+static int	keyboard_w_s(t_game *game, int movement)
 {
 	int	i;
 	int	j;
@@ -54,12 +54,12 @@ static int	keyboard_w_s(t_complete *game, int movement)
 			return (0);
 		game->map[j - 1][i] = '0';
 	}
-	printf("Steps Taken: %i\n", game->counter);
-	printf("Collectables Left: %i\n", game->collectables);
+	ft_printf("Steps Taken: %i\n", game->counter);
+	ft_printf("Collectables Left: %i\n", game->collectables);
 	return (1);
 }
 
-static int	keyboard_a_d(t_complete *game, int movement)
+static int	keyboard_a_d(t_game *game, int movement)
 {
 	int	i;
 	int	j;
@@ -87,17 +87,17 @@ static int	keyboard_a_d(t_complete *game, int movement)
 			return (0);
 		game->map[j][i - 1] = '0';
 	}
-	printf("Steps Taken: %i\n", game->counter);
-	printf("Collectables Remaining: %i\n", game->collectables);
+	ft_printf("Steps Taken: %i\n", game->counter);
+	ft_printf("Collectables Remaining: %i\n", game->collectables);
 	return (1);
 }
 
-int	controls_working(int command, t_complete *game)
+int	controls_working(int command, t_game *game)
 {
 	int	works;
 
 	if (command == 53)
-		exit_point(game);
+		exit_game(game);
 	if (command == 13)
 		works = keyboard_w_s(game, command);
 	if (command == 1)

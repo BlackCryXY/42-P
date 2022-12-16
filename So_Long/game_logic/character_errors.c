@@ -1,6 +1,6 @@
 #include "solong.h"
 
-static void	character_check(t_complete *game, int height, int width)
+static void	character_check(t_game *game, int height, int width)
 {
 	if (game->map[height][width] != '1' &&
 		game->map[height][width] != '0' &&
@@ -9,8 +9,8 @@ static void	character_check(t_complete *game, int height, int width)
 		game->map[height][width] != 'C' &&
 		game->map[height][width] != '\n')
 	{
-		ft_printf("\nAqui hay un error paspi%c\n", game->map[height][width]);
-		exit_point(game);
+		ft_ft_printf("\nAqui hay un error paspi%c\n", game->map[height][width]);
+		exit_game(game);
 	}
 	if (game->map[height][width] == 'C')
 		game->colleccount++;
@@ -20,7 +20,7 @@ static void	character_check(t_complete *game, int height, int width)
 		game->exitcount++;
 }
 
-void	character_valido(t_complete *game)
+void	character_valido(t_game *game)
 {
 	int	height;
 	int	width;
@@ -38,12 +38,12 @@ void	character_valido(t_complete *game)
 	}
 	if (!(game->playercount == 1 && game->colleccount > 1 && game->exitcount == 1))
 	{
-		ft_printf("\nError\nHay algo malo paspi\n error de player, exit o colleccionable\n");
-		exit_point(game);
+		ft_ft_printf("\nError\nHay algo malo paspi\n error de player, exit o colleccionable\n");
+		exit_game(game);
 	}
 }
 
-void	check_characters_errors(t_complete *game)
+void	check_characters_errors(t_game *game)
 {
 	character_valido(game);
 }

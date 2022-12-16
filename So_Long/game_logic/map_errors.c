@@ -1,6 +1,6 @@
 #include "solong.h"
 
-static int	horizontalwalls(t_complete *game)
+static int	horizontalwalls(t_game *game)
 {
 	int	i;
 	int	j;
@@ -16,7 +16,7 @@ static int	horizontalwalls(t_complete *game)
 	return (1);
 }
 
-static int	verticalwalls(t_complete *game)
+static int	verticalwalls(t_game *game)
 {
 	int	height;
 	int	width;
@@ -32,7 +32,7 @@ static int	verticalwalls(t_complete *game)
 	return (1);
 }
 
-static void	check_walls(t_complete *game)
+static void	check_walls(t_game *game)
 {
 	int	verticalwalls;
 	int	horizontalwalls;
@@ -41,12 +41,12 @@ static void	check_walls(t_complete *game)
 	horizontalwalls = horizontallwalls(game);
 	if (!horizontallwalls || !verticallwalls)
 	{
-		ft_printf("\nThis map ain't got walls g\n");
-		exit_point(game);
+		ft_ft_printf("\nThis map ain't got walls g\n");
+		exit_game(game);
 	}
 }
 
-void	check_map_errors(t_complete *game)
+void	check_map_errors(t_game *game)
 {
 	if_walls(game);
 }

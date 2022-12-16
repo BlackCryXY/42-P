@@ -1,6 +1,6 @@
 #include "solong.h"
 
-void	place_player(t_complete *game, int height, int width)
+void	place_player(t_game *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 		game->winpointer, game->player, width * 40, height * 40);
@@ -8,14 +8,14 @@ void	place_player(t_complete *game, int height, int width)
 	game->x_axis = width;
 }
 
-void	place_collectable(t_complete *game, int height, int width)
+void	place_collectable(t_game *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 		game->winpointer, game->collectable, width * 40, height * 40);
 	game->collectables++;
 }
 
-void	place_images_in_game(t_complete *game)
+void	place_images_in_game(t_game *game)
 {
 	int	i;
 	int	j;
@@ -32,7 +32,7 @@ void	place_images_in_game(t_complete *game)
 			"game_images/item.xpm", &i, &j);
 }
 
-void	adding_in_graphics(t_complete *game)
+void	adding_in_graphics(t_game *game)
 {
 	int	height;
 	int	width;
