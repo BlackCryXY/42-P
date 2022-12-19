@@ -33,7 +33,7 @@ static int	keyboard_w_s(t_game *game, int movement)
 
 	i = game->x_axis;
 	j = game->y_axis;
-	if (movement == 13)
+	if (movement == K_UP)
 	{
 		j--;
 		if (game->map[j][i] == '1')
@@ -43,7 +43,7 @@ static int	keyboard_w_s(t_game *game, int movement)
 			return (0);
 		game->map[j + 1][i] = '0';
 	}
-	else if (movement == 1)
+	else if (movement == K_DOWN)
 	{
 		j++;
 		if (game->map[j][i] == '1')
@@ -67,7 +67,7 @@ static int	keyboard_a_d(t_game *game, int movement)
 
 	i = game->x_axis;
 	j = game->y_axis;
-	if (movement == 0)
+	if (movement == K_LEFT)
 	{
 		i--;
 		if (game->map[j][i] == '1')
@@ -77,7 +77,7 @@ static int	keyboard_a_d(t_game *game, int movement)
 			return (0);
 		game->map[j][i + 1] = '0';
 	}
-	else if (movement == 2)
+	else if (movement == K_RIGHT)
 	{
 		i++;
 		if (game->map[j][i] == '1')
@@ -96,15 +96,15 @@ int	controls_working(int command, t_game *game)
 {
 	int	works;
 
-	if (command == 53)
+	if (command == K_ESC)
 		exit_game(game);
-	if (command == 13)
+	if (command == K_UP)
 		works = keyboard_w_s(game, command);
-	if (command == 1)
+	if (command == K_DOWN)
 		works = keyboard_w_s(game, command);
-	if (command == 0)
+	if (command == K_LEFT)
 		works = keyboard_a_d(game, command);
-	if (command == 2)
+	if (command == K_RIGHT)
 		works = keyboard_a_d(game, command);
 	if (works)
 		adding_in_graphics(game);
