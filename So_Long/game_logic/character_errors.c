@@ -38,7 +38,7 @@ void	character_valido(t_game *game)
 	}
 	if (!(game->playercount == 1 && game->colleccount > 1 && game->exitcount == 1))
 	{
-		ft_ft_printf("\nError\nHay algo malo paspi\n error de player, exit o colleccionable\n");
+		ft_printf("\nError\nHay algo malo paspi\n error de player, exit o colleccionable\n");
 		exit_game(game);
 	}
 }
