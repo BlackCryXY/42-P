@@ -1,5 +1,5 @@
-#ifndef push_swap
-# define push_swap
+#ifndef push_swap_h
+# define push_swap_h
 
 # include <unistd.h>
 # include <string.h>
@@ -13,7 +13,8 @@
 
 
 
-
+int	ft_strlen(const char *str);
+char	**ft_split(char const *str, char c);
 
 
 #endif
