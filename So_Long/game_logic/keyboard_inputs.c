@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keyboard_inputs.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/05 14:42:10 by tsantiag          #+#    #+#             */
+/*   Updated: 2023/01/05 15:34:14 by tsantiag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../headers/solong.h"
 
 int	keyboard_w(t_game *game, int movement)
@@ -17,7 +29,7 @@ int	keyboard_w(t_game *game, int movement)
 		if (!k)
 			return (0);
 		game->map[j + 1][i] = '0';
-        }
+	}
 	ft_printf("Steps Taken: %i\n", game->counter);
 	ft_printf("Collectables Left: %i\n", game->collectables);
 	return (1);
@@ -29,8 +41,8 @@ int	keyboard_s(t_game *game, int movement)
 	int	j;
 	int	k;
 
-        i = game->x_axis;
-        j = game->y_axis;
+	i = game->x_axis;
+	j = game->y_axis;
 	if (movement == K_DOWN)
 	{
 		j++;
@@ -45,6 +57,7 @@ int	keyboard_s(t_game *game, int movement)
 	ft_printf("Collectables Left: %i\n", game->collectables);
 	return (1);
 }
+
 int	keyboard_a(t_game *game, int movement)
 {
 	int	i;
@@ -67,7 +80,8 @@ int	keyboard_a(t_game *game, int movement)
 	ft_printf("Collectables Remaining: %i\n", game->collectables);
 	return (1);
 }
-int	keyboard_a_d(t_game *game, int movement)
+
+int	keyboard_d(t_game *game, int movement)
 {
 	int	i;
 	int	j;

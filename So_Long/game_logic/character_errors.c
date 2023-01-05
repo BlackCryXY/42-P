@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   character_errors.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/05 14:41:53 by tsantiag          #+#    #+#             */
+/*   Updated: 2023/01/05 15:02:21 by tsantiag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "solong.h"
 
 static void	character_check(t_game *game, int height, int width)
@@ -36,9 +48,11 @@ void	character_valido(t_game *game)
 		}
 		height++;
 	}
-	if (!(game->playercount == 1 && game->colleccount > 1 && game->exitcount == 1))
+	if (!(game->playercount == 1
+			&& game->colleccount > 1 && game->exitcount == 1))
 	{
-		ft_printf("\nError\nHay algo malo paspi\n error de player, exit o colleccionable\n");
+		ft_printf("\nError\nHay algo malo paspi\n");
+		ft_printf("\nerror de player, exit o colleccionable\n");
 		exit_game(game);
 	}
 }

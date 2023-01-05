@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:50:17 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/12/03 10:56:08 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/05 15:36:13 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../headers/solong.h"
@@ -21,7 +21,7 @@ static void	*ft_memset(void *b, int c, size_t length)
 	return (b);
 }
 
-int	exit_point(t_complete *game)
+int	exit_game(t_complete *game)
 {
 	int	line;
 

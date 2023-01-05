@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:37:54 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/12/07 14:44:34 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/05 14:50:18 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,14 @@ static int	width_of_map(char *s)
 static int	add_line(t_game *game, char *line)
 {
 	char	**temporary;
-	int	i;
+	int		i;
 
 	if (!line)
 		return (0);
 	i = 0;
 	game->heightmap++;
 	temporary = (char **)malloc(sizeof(char *) * (game->heightmap + 1));
-	temporary[game->heightmap} = NULL;
-
+	temporary(game->heightmap) = NULL;
 	while (i < game->heightmap - 1)
 	{
 		temporary[i] = game->map[i];
