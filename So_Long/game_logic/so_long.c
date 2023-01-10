@@ -6,7 +6,7 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:50:17 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/10 14:57:35 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:02:12 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../headers/solong.h"
@@ -37,13 +37,14 @@ int	exit_game(t_game *game)
 
 int	main(int argc, char **argv)
 {
-	t_complete	game;
+	t_game	game;
 
 	if (argc != 2)
 		return (0);
-	ft_memset(&game, 0, sizeof(t_complete));
+	ft_memset(&game, 0, sizeof(t_game));
 	map_reading(&game, argv);
-	check_errors(&game);
+	check_map_errors(&game);
+	check_characters_errors(&game);
 	game.mlxpointer = mlx_init();
 	game.winpointer = mlx_new_window(game.mlxpointer, (game.widthmap * 40),
 			(game.heightmap * 40), "solong");

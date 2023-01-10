@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:51:27 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/10 15:05:10 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:56:53 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,11 @@ typedef struct s_game
 	void	character_valido(t_game *game);
 	void	check_character_errors(t_game *game);
 	void	place_player(t_game *game, int height, int width);
+	void	check_walls(t_game *game);
 	int	exit_game(t_game *game);
 	int	keyboard_w(t_game *game, int movement);
 	int	keyboard_s(t_game *game, int movement);
 	int	keyboard_a(t_game *game, int movement);
 	int	keyboard_d(t_game *game, int movement);
-
+	  
 #endif

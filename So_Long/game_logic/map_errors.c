@@ -6,13 +6,13 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:50:17 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/05 14:51:31 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 16:56:37 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "solong.h"
+#include "../headers/solong.h"
 
-static int	horizontalwalls(t_game *game)
+static int	horizontalwall(t_game *game)
 {
 	int	i;
 	int	j;
@@ -28,7 +28,7 @@ static int	horizontalwalls(t_game *game)
 	return (1);
 }
 
-static int	verticalwalls(t_game *game)
+static int	verticalwall(t_game *game)
 {
 	int	height;
 	int	width;
@@ -45,21 +45,21 @@ static int	verticalwalls(t_game *game)
 	return (1);
 }
 
-static void	check_walls(t_game *game)
+void	check_walls(t_game *game)
 {
 	int	verticalwalls;
 	int	horizontalwalls;
 
-	verticalwalls = verticallwalls(game);
-	horizontalwalls = horizontallwalls(game);
-	if (!horizontallwalls || !verticallwalls)
+	verticalwalls = verticalwall(game);
+	horizontalwalls = horizontalwall(game);
+	if (!horizontalwalls || !verticalwalls)
 	{
-		ft_ft_printf("\nThis map ain't got walls g\n");
+		ft_printf("\nThis map ain't got walls g\n");
 		exit_game(game);
 	}
 }
 
 void	check_map_errors(t_game *game)
 {
-	if_walls(game);
+	check_walls(game);
 }

@@ -6,7 +6,7 @@
 #    By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 11:25:47 by tsantiag          #+#    #+#              #
-#    Updated: 2023/01/10 15:02:23 by tsantiag         ###   ########.fr        #
+#    Updated: 2023/01/10 17:25:57 by tsantiag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = game_logic/character_errors.c \
 
 OBJS = $(SRC:.c=.o)
 
-
+GNL	= GNL/*.c
 PRINTF_A = libftprintf.a
 PRINTF_DIR = printf/
 PRINTF = $(addprefix $(PRINTF_DIR), $(PRINTF_A))
@@ -36,7 +36,7 @@ all: ${NAME}
 
 $(NAME): ${OBJS}
 	make -C $(PRINTF_DIR)
-	cc ${OBJS} minilibx-linux/libmlx.a minilibx-linux/libmlx_Linux.a -L. -lXext -L. -lX11 ${PRINTF} -o $(NAME)
+	cc ${OBJS} minilibx-linux/libmlx.a minilibx-linux/libmlx_Linux.a -L. -lXext -L. -lX11 $(GNL) ${PRINTF} -o $(NAME)
 
 clean:
 	make clean -C printf
