@@ -6,69 +6,46 @@
 #    By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 11:25:47 by tsantiag          #+#    #+#              #
-#    Updated: 2023/01/10 14:31:41 by tsantiag         ###   ########.fr        #
+#    Updated: 2023/01/10 15:02:23 by tsantiag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= so_long
-CC	= cc
-FLAGS	= -Wall -Wextra -Werror -I -g
+NAME = so_long
 
-GNL	= GNL
-PRINTF	= ft_printf
-HEADERS	= headers
-OBJ_PATH	= objs
-SRC_PATH	= game_logic
-MLX	= minilibx-linux
+SRC = game_logic/character_errors.c \
+	game_logic/game_controls.c \
+	game_logic/game_graphics.c \
+	game_logic/keyboard_inputs.c \
+	game_logic/map_errors.c \
+	game_logic/map_logic.c \
+	game_logic/so_long.c \
 
-SOURCES	=	so_long.c \
-		character_errors.c \
-		game_graphics.c \
-		map_errors.c \
-		game_controls.c \
-		keyboard_inputs.c \
-		map_logic.c \
+OBJS = $(SRC:.c=.o)
 
 
-SRCS	= $(addprefix $(SRC_PATH)/,$(SOURCES))
-OBJS	= $(addprefix $(OBJ_PATH)/,$(SOURCES:.c=.o))
+PRINTF_A = libftprintf.a
+PRINTF_DIR = printf/
+PRINTF = $(addprefix $(PRINTF_DIR), $(PRINTF_A))
 
+INCLUDE = includes/
 
-NOC         = \033[0m
-BOLD        = \033[1m
-UNDERLINE   = \033[4m
-BLACK       = \033[1;30m
-RED         = \033[1;31m
-GREEN       = \033[1;32m
-YELLOW      = \033[1;33m
-BLUE        = \033[1;34m
-VIOLET      = \033[1;35m
-CYAN        = \033[1;36m
-WHITE       = \033[1;37m
+.c.o :
+	cc -Wall -Wextra -I/usr/include -Imlx_linux -O3 -c $< -o ${<:.c=.o}
 
-all:	lib tmp $(NAME)
+all: ${NAME}
 
-lib:
-	@echo "$(GREEN)Creating lib files$(CYAN)"
-	@make -C $(PRINTF)
-	@make -C $(MLX)
-
-$(NAME): $(OBJS)
-	$(CC) $(FLAGS) -L $(PRINTF) -L $(MLX) -L $(GNL) -o $@ $^ -lft -lmlx -lXext -lX11 -lm
-	@echo "$(WHITE)Creation of object file -> $(BLUE)$(notdir $@)... $(RED)[Done]$(NOC)"
+$(NAME): ${OBJS}
+	make -C $(PRINTF_DIR)
+	cc ${OBJS} minilibx-linux/libmlx.a minilibx-linux/libmlx_Linux.a -L. -lXext -L. -lX11 ${PRINTF} -o $(NAME)
 
 clean:
-	@echo "$(GREEN)Cleaning libraries$(CYAN)"
-	@make clean -C $(PRINTF)
-	@rm -rf $(OBJ_PATH)
+	make clean -C printf
+	rm -f $(OBJS)
 
-fclean:
-	@echo "$(GREEN)Cleaning libraries files$(CYAN)"
-	@rm -rf $(OBJ_PATH)
-	@rm -f $(NAME)
-	@make fclean -C $(PRINTF)
+fclean: clean
+	make fclean -C printf
+	rm -f ${NAME}
 
 re: fclean all
 
-
-.PHONY:	all clean fclean re
+.PHONY: all clean fclean re

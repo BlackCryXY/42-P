@@ -6,13 +6,13 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:42:07 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/05 15:32:55 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:08:12 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "solong.h"
+#include "../headers/solong.h"
 
-static void	place_player(t_game *game, int height, int width)
+void	place_player(t_game *game, int height, int width)
 {
 	mlx_put_image_to_window(game->mlxpointer,
 		game->winpointer, game->player, width * 40, height * 40);

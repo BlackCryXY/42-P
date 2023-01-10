@@ -6,17 +6,19 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:42:03 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/05 14:42:04 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:05:19 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	right_move(t_game *game, int i, int j)
+#include "../headers/solong.h"
+
+int	right_move(t_game *game, int i, int j)
 {
 	if (game->map[j][i] == 'E')
 	{
 		if (game->collectables != 0)
 			return (0);
-		ft_ft_printf("\nGanaste paspi!\n");
+		ft_printf("\nGanaste paspi!\n");
 		exit_game(game);
 	}
 	if (game->map[j][i] == '0')

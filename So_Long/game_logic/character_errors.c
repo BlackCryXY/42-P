@@ -6,11 +6,11 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:41:53 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/05 15:02:21 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:47:59 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "solong.h"
+#include "../headers/solong.h"
 
 static void	character_check(t_game *game, int height, int width)
 {
@@ -21,7 +21,7 @@ static void	character_check(t_game *game, int height, int width)
 		game->map[height][width] != 'C' &&
 		game->map[height][width] != '\n')
 	{
-		ft_ft_printf("\nAqui hay un error paspi%c\n", game->map[height][width]);
+		ft_printf("\nAqui hay un error paspi%c\n", game->map[height][width]);
 		exit_game(game);
 	}
 	if (game->map[height][width] == 'C')
@@ -41,10 +41,10 @@ void	character_valido(t_game *game)
 	while (height < game->heightmap - 1)
 	{
 		width = 0;
-		while (widht <= game->widthmap)
+		while (width <= game->widthmap)
 		{
 			character_check(game, height, width);
-			width++:;
+			width++;
 		}
 		height++;
 	}

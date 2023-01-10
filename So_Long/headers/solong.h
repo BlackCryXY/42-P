@@ -6,16 +6,16 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:51:27 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/05 15:34:41 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:05:10 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SOLONG_H
 # define SOLONG_H
 
-# include "./get_next_line.h"
-# include "./mlx.h"
-# include "./ft_printf.h"
+# include "../GNL/get_next_line.h"
+# include "../minilibx-linux/mlx.h"
+# include "../printf/ft_printf.h"
 # include <errno.h>
 # include <fcntl.h>
 # include <math.h>
@@ -57,6 +57,7 @@ typedef struct s_game
 } t_game;
 
 
+	int	right_move(t_game *game, int i, int j);
 	int	map_reading(t_game *game, char **argv);
 	int	controls_working(int command, t_game *game);
 	void	check_map_errors(t_game *game);
