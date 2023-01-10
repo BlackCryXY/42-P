@@ -6,11 +6,11 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:55:14 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/12/07 13:20:21 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:26:28 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/get_next_line.h"
+#include "get_next_line.h"
 
 static char	*next_line(int fd, char *buffer, char *backup)
 {

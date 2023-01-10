@@ -6,11 +6,11 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:55:51 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/12/07 13:20:44 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:26:39 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/get_next_line.h"
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {
