@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:51:27 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/11 11:08:40 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:14:20 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include <sys/stat.h>
 # include <unistd.h>
 
-# define K_ESC 650307
+# define K_ESC 65307
 # define K_UP 119
 # define K_LEFT 97
 # define K_RIGHT 100
@@ -54,26 +54,25 @@ typedef struct s_game
 	void	*mlxpointer;
 	void	*winpointer;
 
-} t_game;
+}			t_game;
 
+int			right_move(t_game *game, int i, int j);
+int			map_reading(t_game *game, char **argv);
+int			controls_working(int command, t_game *game);
+void		check_map_errors(t_game *game);
+void		check_characters_errors(t_game *game);
+void		adding_in_graphics(t_game *game);
+void		place_images_in_game(t_game *game);
+void		parsing(t_game *game, int height, int width);
+void		place_collectable(t_game *game, int height, int width);
+void		character_valido(t_game *game);
+void		check_character_errors(t_game *game);
+void		place_player(t_game *game, int height, int width);
+void		check_walls(t_game *game);
+int			exit_game(t_game *game);
+int			keyboard_w(t_game *game, int movement);
+int			keyboard_s(t_game *game, int movement);
+int			keyboard_a(t_game *game, int movement);
+int			keyboard_d(t_game *game, int movement);
 
-	int	right_move(t_game *game, int i, int j);
-	int	map_reading(t_game *game, char **argv);
-	int	controls_working(int command, t_game *game);
-	void	check_map_errors(t_game *game);
-	void	check_characters_errors(t_game *game);
-	void	adding_in_graphics(t_game *game);
-	void	place_images_in_game(t_game *game);
-	void	parsing(t_game *game, int height, int width);
-	void	place_collectable(t_game *game, int height, int width);
-	void	character_valido(t_game *game);
-	void	check_character_errors(t_game *game);
-	void	place_player(t_game *game, int height, int width);
-	void	check_walls(t_game *game);
-	int	exit_game(t_game *game);
-	int	keyboard_w(t_game *game, int movement);
-	int	keyboard_s(t_game *game, int movement);
-	int	keyboard_a(t_game *game, int movement);
-	int	keyboard_d(t_game *game, int movement);
-	  
 #endif

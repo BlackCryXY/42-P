@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:55:51 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/11 11:13:43 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:41:23 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 
 	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
+	if (!str || str == 0)
 		return (NULL);
 	i = 0;
 	j = 0;
