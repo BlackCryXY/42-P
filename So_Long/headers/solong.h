@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:51:27 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/10 16:56:53 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/11 11:08:40 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 # define K_ESC 650307
 # define K_UP 119
-# define K_LEFT 115
+# define K_LEFT 97
 # define K_RIGHT 100
 # define K_DOWN 115
 
