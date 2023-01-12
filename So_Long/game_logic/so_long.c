@@ -28,6 +28,12 @@ int	exit_game(t_game *game)
 	line = 0;
 	if (game->winpointer)
 		mlx_destroy_window(game->mlxpointer, game->winpointer);
+	mlx_destroy_image(game->mlxpointer, game->floor);
+	mlx_destroy_image(game->mlxpointer, game->barrier);
+	mlx_destroy_image(game->mlxpointer, game->player);
+	mlx_destroy_image(game->mlxpointer, game->collectable);
+	mlx_destroy_image(game->mlxpointer, game->exit);
+	mlx_destroy_display(game->mlxpointer);
 	free(game->mlxpointer);
 	while (line < game->heightmap - 1)
 		free(game->map[line++]);
@@ -51,6 +57,6 @@ int	main(int argc, char **argv)
 	place_images_in_game(&game);
 	adding_in_graphics(&game);
 	mlx_key_hook(game.winpointer, controls_working, &game);
-	mlx_hook(game.winpointer, 17, 0, (void *)exit, 0);
+	mlx_hook(game.winpointer, 17, 0, exit_game, 0);
 	mlx_loop(game.mlxpointer);
 }

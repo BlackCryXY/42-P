@@ -59,6 +59,7 @@ int	map_reading(t_game *game, char **argv)
 		readmap = get_next_line(game->fd);
 		if (!add_line(game, readmap))
 			break ;
+		free(readmap);
 	}
 	close (game->fd);
 	game->widthmap = width_of_map(game->map[0]);
