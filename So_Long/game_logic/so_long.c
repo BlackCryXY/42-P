@@ -6,7 +6,7 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:50:17 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/10 17:02:12 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:18:49 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../headers/solong.h"
@@ -38,7 +38,7 @@ int	exit_game(t_game *game)
 	while (line < game->heightmap)
 		free(game->map[line++]);
 	free(game->map);
-	exit(0);
+	exit(1);
 }
 
 int	main(int argc, char **argv)
@@ -57,6 +57,6 @@ int	main(int argc, char **argv)
 	place_images_in_game(&game);
 	adding_in_graphics(&game);
 	mlx_key_hook(game.winpointer, controls_working, &game);
-	mlx_hook(game.winpointer, 17, 0, exit_game, 0);
+	mlx_hook(game.winpointer, 17, 0, (void *)exit_game, &game);
 	mlx_loop(game.mlxpointer);
 }
