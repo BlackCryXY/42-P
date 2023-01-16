@@ -6,7 +6,7 @@
 #    By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 11:25:47 by tsantiag          #+#    #+#              #
-#    Updated: 2023/01/11 14:07:35 by tsantiag         ###   ########.fr        #
+#    Updated: 2023/01/16 16:56:23 by tsantiag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC = game_logic/character_errors.c \
 	game_logic/map_errors.c \
 	game_logic/map_logic.c \
 	game_logic/so_long.c \
+	game_logic/handle_game_graphics.c \
 
 OBJS = $(SRC:.c=.o)
 

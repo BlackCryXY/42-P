@@ -34,6 +34,8 @@ static int	add_line(t_game *game, char *line)
 	i = 0;
 	game->heightmap++;
 	temporary = (char **)malloc(sizeof(char *) * (game->heightmap + 1));
+	if (!temporary)
+		return (0);
 	temporary[game->heightmap] = NULL;
 	while (i < game->heightmap - 1)
 	{

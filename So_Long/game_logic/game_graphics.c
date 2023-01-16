@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:42:07 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/11 10:58:20 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:55:48 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	place_images_in_game(t_game *game)
 			"game_images/collectable.xpm", &i, &j);
 }
 
-void adding_in_graphics(t_game *game)
+void	adding_in_graphics(t_game *game)
 {
 	int	height;
 	int	width;
