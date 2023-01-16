@@ -35,7 +35,7 @@ int	exit_game(t_game *game)
 	mlx_destroy_image(game->mlxpointer, game->exit);
 	mlx_destroy_display(game->mlxpointer);
 	free(game->mlxpointer);
-	while (line < game->heightmap - 1)
+	while (line < game->heightmap)
 		free(game->map[line++]);
 	free(game->map);
 	exit(0);
