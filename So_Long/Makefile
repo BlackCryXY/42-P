@@ -6,7 +6,7 @@
 #    By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 11:25:47 by tsantiag          #+#    #+#              #
-#    Updated: 2023/01/16 16:56:23 by tsantiag         ###   ########.fr        #
+#    Updated: 2023/01/18 14:51:32 by tsantiag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ PRINTF = $(addprefix $(PRINTF_DIR), $(PRINTF_A))
 INCLUDE = includes/
 
 .c.o :
-	cc -Wall -Wextra -I/usr/include -g3 -Imlx_linux -O3 -c $< -o ${<:.c=.o}
+	cc -Wall -Werror -Wextra -I/usr/include -g3 -Imlx_linux -O3 -c $< -o ${<:.c=.o}
 
 NOC	= \033[0m
 GREEN	= \033[1;32m

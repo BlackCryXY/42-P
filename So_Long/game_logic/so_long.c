@@ -6,7 +6,7 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:50:17 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/18 12:49:45 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/18 15:00:20 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../headers/solong.h"
@@ -57,12 +57,14 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	if (argc != 2)
-		return (0);
+		return (1);
 	ft_memset(&game, 0, sizeof(t_game));
 	map_reading(&game, argv);
 	check_map_errors(&game);
 	check_characters_errors(&game);
 	game.mlxpointer = mlx_init();
+	if (!game.mlxpointer)
+		exit_game_mlx(&game);
 	game.winpointer = mlx_new_window(game.mlxpointer, (game.widthmap * 40),
 			(game.heightmap * 40), "solong");
 	place_images_in_game(&game);
