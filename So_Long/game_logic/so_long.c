@@ -6,7 +6,7 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:50:17 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/13 18:18:49 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/18 12:49:45 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../headers/solong.h"
@@ -19,6 +19,17 @@ static void	*ft_memset(void *b, int c, size_t length)
 	while (length--)
 		*p++ = (unsigned char)c;
 	return (b);
+}
+
+int	exit_game_mlx(t_game *game)
+{
+	int	line;
+
+	line = 0;
+	while (line < game->heightmap)
+		free(game->map[line++]);
+	free(game->map);
+	exit(1);
 }
 
 int	exit_game(t_game *game)

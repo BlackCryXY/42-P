@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:37:54 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/13 17:46:55 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/18 12:49:27 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	map_reading(t_game *game, char **argv)
 	while (1)
 	{
 		readmap = get_next_line(game->fd);
+		if (!readmap)
+			return (0);
 		if (!add_line(game, readmap))
 			break ;
 	}

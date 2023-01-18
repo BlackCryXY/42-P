@@ -6,7 +6,7 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:50:17 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/10 16:56:37 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/18 12:44:40 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	check_walls(t_game *game)
 	if (!horizontalwalls || !verticalwalls)
 	{
 		ft_printf("\nThis map ain't got walls g\n");
-		exit_game(game);
+		exit_game_mlx(game);
 	}
 }
 

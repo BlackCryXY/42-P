@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:51:27 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/11 12:14:20 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/18 12:43:46 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,5 @@ int			keyboard_w(t_game *game, int movement);
 int			keyboard_s(t_game *game, int movement);
 int			keyboard_a(t_game *game, int movement);
 int			keyboard_d(t_game *game, int movement);
-
+int			exit_game_mlx(t_game *game);
 #endif

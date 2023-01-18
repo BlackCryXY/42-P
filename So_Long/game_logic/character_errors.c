@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:41:53 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/01/10 14:47:59 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/01/18 12:44:25 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	character_check(t_game *game, int height, int width)
 		game->map[height][width] != '\n')
 	{
 		ft_printf("\nAqui hay un error paspi%c\n", game->map[height][width]);
-		exit_game(game);
+		exit_game_mlx(game);
 	}
 	if (game->map[height][width] == 'C')
 		game->colleccount++;
@@ -53,7 +53,7 @@ void	character_valido(t_game *game)
 	{
 		ft_printf("\nError\nHay algo malo paspi\n");
 		ft_printf("\nerror de player, exit o colleccionable\n");
-		exit_game(game);
+		exit_game_mlx(game);
 	}
 }
 
