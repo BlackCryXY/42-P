@@ -23,7 +23,7 @@ int	stack_sorted(long *stack_a, int *n_stack_a)
 	return (-1);
 }
 
-void	ft_free_string(char **str)
+static void	ft_free_string(char **str)
 {
 	int	i;
 
@@ -96,7 +96,7 @@ int	input_numbers(long *stack_a, int *n_stack_a, char **argv)
 	}
 	if (repeated_numbers(stack_a, n_stack_a[1]) == -1)
 		return (-1);
-	if (number_limits(stack_a, n_stack_a[1] == -1))
+	if (number_max(stack_a, n_stack_a[1] == -1))
 		return (-1);
 	return (0);
 }
