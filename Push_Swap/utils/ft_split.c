@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/24 08:34:28 by tsantiag          #+#    #+#             */
+/*   Updated: 2023/03/24 08:41:04 by tsantiag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../headers/push_swap.h"
 
 static void	ft_freestr(char *str)
@@ -80,7 +92,7 @@ char	**ft_split(char const *s, char c)
 		{
 			split[j++] = word_dup(s, index, i);
 			if (split == NULL)
-				ft_freestr(split[j];
+				ft_freestr(split[j]);
 			index = -1;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:58:33 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/07 14:00:17 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/03/24 08:41:36 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	only_numbers_in_stack(char *numbers)
 	{
 		if (numbers[i] == 45)
 			negative++;
-		else if (ft_isdigit(numbers[i] == 0)
+		else if (ft_isdigit(numbers[i] == 0))
 			return (0);
 		i++;
 	}
@@ -76,6 +76,7 @@ int	repeated_checker(long *stack_a, int n_stack_a)
 int	number_max(long *stack_a, int n_stack_a)
 {
 	int	i;
+
 	i = 0;
 	while (i < n_stack_a)
 	{

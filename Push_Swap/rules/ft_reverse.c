@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:54:50 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/07 13:55:51 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/03/24 08:38:16 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,5 @@ void	rrr(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	}
 	stack_b[*n_stack_b - 1] = *temp;
 	free(temp);
-	write(1, "rrr\n" 3;
+	write(1, "rrr\n" 3);
 }

@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:55:56 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/07 13:56:59 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/03/24 08:38:51 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	rr(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	*temp = stack_a[0];
 	while (i < n_stack_a[1])
 	{
-		stack_a[i] = stack_a[i + 1};
+		stack_a[i] = stack_a[i + 1];
 		i++;
 	}
 	stack_a[n_stack_a[1] - 1] = *temp;
