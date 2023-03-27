@@ -24,7 +24,7 @@ static void	reverse_rotate_a_twice(long *stack_a, int *n_stack_a)
 	reverse_rotate_stack_a(stack_a, n_stack_a);
 }
 
-void	first_stack(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	first_stack_2(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
 	if (stack_b[0] < stack_a[0])
 		pa(stack_a, stack_b, n_stack_a, n_stack_b);

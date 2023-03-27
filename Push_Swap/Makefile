@@ -19,10 +19,12 @@ SOURCES	=	rules/ft_push.c \
 		sorting/ft_sort_3_numbers.c \
 		sorting/ft_sort_5_numbers.c \
 		sorting/ft_beyond_5.c \
+		sorting/ft_sort_4_numbers.c \
 		utils/utils1.c \
 		utils/utils2.c \
 		utils/utils3.c \
-
+		utils/utils.c \
+		utils/ft_split.c \
 OBJECTS = $(SOURCES:.c=.o)
 
 INCLUDE = includes/
