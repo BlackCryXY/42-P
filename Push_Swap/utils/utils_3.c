@@ -74,3 +74,24 @@ void	ft_new_memory(long *pointer, int startsize, int newsize)
 		pointer = temporary;
 	}
 }
+
+int	stack_size(int argc, char **argv)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	size = 1;
+	if (argc == 2)
+	{
+		while (argv[1][i])
+		{
+			if (argv[1][i] == 32)
+				size++;
+			i++;
+		}
+	}
+	else
+		size = argc - 1;
+	return (size);
+}
