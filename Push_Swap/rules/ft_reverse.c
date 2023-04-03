@@ -41,7 +41,7 @@ void	rrb(long *stack_b, int *n_stack_b)
 	temp = (long *)malloc(sizeof(long));
 	if (!temp)
 		return ;
-	*temp = stack_b[*n_stack_b[1] - 1];
+	*temp = stack_b[*n_stack_b - 1];
 	while (i > 0)
 	{
 		stack_b[i] = stack_b[i - 1];
@@ -77,5 +77,5 @@ void	rrr(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	}
 	stack_b[*n_stack_b - 1] = *temp;
 	free(temp);
-	write(1, "rrr\n" 3);
+	write(1, "rrr\n", 3);
 }

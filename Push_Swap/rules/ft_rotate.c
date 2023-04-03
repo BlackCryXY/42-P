@@ -32,7 +32,7 @@ void	ra(long *stack_a, int *n_stack_a)
 	write(1, "ra\n", 2);
 }
 
-void	rb(long *stack_b, int *n_stack_a)
+void	rb(long *stack_b, int *n_stack_b)
 {
 	int	i;
 	long	*temp;

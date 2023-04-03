@@ -12,25 +12,25 @@
 
 NAME	= push_swap
 
-SOURCES	=	rules/ft_push.c \
-		rules/ft_reverse.c \
-		rules/ft_rotate.c \
-		rules/ft_swap.c \
-		sorting/ft_sort_3_numbers.c \
-		sorting/ft_sort_5_numbers.c \
-		sorting/ft_beyond_5.c \
-		sorting/ft_sort_4_numbers.c \
-		utils/utils1.c \
-		utils/utils2.c \
-		utils/utils3.c \
-		utils/utils.c \
-		utils/ft_split.c \
-OBJECTS = $(SOURCES:.c=.o)
+SOURCES	= rules/ft_push.c \
+	rules/ft_reverse.c \
+	rules/ft_rotate.c \
+	rules/ft_swap.c \
+	sorting/ft_sort_3_numbers.c \
+	sorting/ft_sort_5_numbers.c \
+	sorting/ft_beyond_5.c \
+	sorting/ft_sort_4_numbers.c \
+	utils/utils1.c \
+	utils/utils2.c \
+	utils/utils3.c \
+	utils/utils.c \
+	utils/ft_split.c \
+	main.c \
 
-INCLUDE = includes/
+OBJS = $(SOURCES:.c=.o)
 
 .c.o :
-	cc -Wall -Werror -Wextra -I/usr/include -c $< -o ${<:.c=.o}
+	cc -Wall -Werror -Wextra -Iheaders -c $< -o ${<:.c=.o}
 
 NOC	= \033[0m
 GREEN	= \033[1;32m

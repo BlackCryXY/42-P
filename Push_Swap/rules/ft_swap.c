@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "..headers/push_swap.h"
+#include "../headers/push_swap.h"
 
 void	sa(long *stack_a, int *n_stack_a)
 {
@@ -34,7 +34,7 @@ void	sb(long *stack_b, int *n_stack_b)
 	long	*temp;
 
 	temp = (long *)malloc(sizeof(long));
-	(!temp)
+	if (!temp)
 		return ;
 	if (*n_stack_b > 1)
 	{
