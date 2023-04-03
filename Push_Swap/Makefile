@@ -20,10 +20,10 @@ SOURCES	= rules/ft_push.c \
 	sorting/ft_sort_5_numbers.c \
 	sorting/ft_beyond_5.c \
 	sorting/ft_sort_4_numbers.c \
-	utils/utils1.c \
-	utils/utils2.c \
-	utils/utils3.c \
-	utils/utils.c \
+	utils/utils_2.c \
+	utils/utils_3.c \
+	utils/utils_4.c \
+	utils/utils_1.c \
 	utils/ft_split.c \
 	main.c \
 

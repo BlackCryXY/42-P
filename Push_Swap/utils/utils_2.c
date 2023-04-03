@@ -1,114 +1,91 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_2.c                                          :+:      :+:    :+:   */
+/*   utils_1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/24 08:35:00 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/24 08:35:01 by tsantiag         ###   ########.fr       */
+/*   Created: 2023/03/07 13:58:33 by tsantiag          #+#    #+#             */
+/*   Updated: 2023/03/24 08:41:36 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int	stack_sorted(long *stack_a, int *n_stack_a)
+int	ft_strlen(char *s)
 {
-	int		i;
-	int		j;
-	long	max;
+	int	i;
 
-	i = 1;
-	j = 0;
-	max = stack_a[0];
-	while (i < n_stack_a[1])
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+int	ft_isdigit(int i)
+{
+	while (i >= '0' && i <= 9)
+		return (1);
+	return (0);
+}
+
+int	only_numbers_in_stack(char *numbers)
+{
+	int	i;
+	int	negative;
+
+	i = 0;
+	negative = 0;
+	while (numbers[i])
 	{
-		if (stack_a[i] > max)
-		{
-			max = stack_a[i];
-			j++;
-		}
+		if (numbers[i] == 45)
+			negative++;
+		else if (ft_isdigit(numbers[i] == 0))
+			return (0);
 		i++;
 	}
-	if (j == n_stack_a[i] - 1)
+	if (negative > 1)
 		return (0);
-	return (-1);
+	return (1);
 }
 
-static void	ft_free_string(char **str)
+int	repeated_checker(long *stack_a, int n_stack_a)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (str[i])
+	j = 0;
+	while (i < n_stack_a)
 	{
-		free(str[i]);
-		i++;
-	}
-}
-
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	neg;
-	int	res;
-
-	i = 0;
-	neg = 1;
-	res = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			neg *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = (str[i] - '0') + (res * 10);
-		i++;
-	}
-	return (res * neg);
-}
-
-int	input_numbers_2(long *stack_a, int *n_stack_a, char **argv)
-{
-	int	i;
-
-	i = 0;
-	while (i < n_stack_a[1])
-	{
-		if (only_numbers_in_stack(argv[i + 1]) == 1)
-			stack_a[i] = ft_atoi(argv[i + 1]);
-		else
+		j = 0;
+		while (j < n_stack_a)
 		{
-			write(1, "Error\n", 6);
-			return (-1);
+			if ((stack_a[i] == stack_a[j]) && (i != j))
+			{
+				write(1, "Error\n", 6);
+				return (-1);
+			}
+			j++;
 		}
 		i++;
 	}
 	return (0);
 }
 
-int	input_numbers(long *stack_a, int *n_stack_a, char **argv)
+int	number_max(long *stack_a, int n_stack_a)
 {
-	char	**numbers_list;
+	int	i;
 
-	numbers_list = NULL;
-	if (n_stack_a[0] == 1)
+	i = 0;
+	while (i < n_stack_a)
 	{
-		if (numbers_input(stack_a, n_stack_a, argv, numbers_list) == -1)
+		if ((stack_a[i] > 2147383647) || (stack_a[i] < -2147383647))
+		{
+			write(1, "Error\n", 6);
 			return (-1);
+		}
+		i++;
 	}
-	else
-	{
-		if (input_numbers_2(stack_a, n_stack_a, argv) == -1)
-			return (-1);
-	}
-	if (repeated_numbers(stack_a, n_stack_a[1]) == -1)
-		return (-1);
-	if (number_max(stack_a, n_stack_a[1] == -1))
-		return (-1);
 	return (0);
 }

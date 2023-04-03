@@ -1,97 +1,102 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_3.c                                          :+:      :+:    :+:   */
+/*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/24 08:34:56 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/24 08:34:57 by tsantiag         ###   ########.fr       */
+/*   Created: 2023/03/24 08:35:00 by tsantiag          #+#    #+#             */
+/*   Updated: 2023/03/24 08:35:01 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-static int	numbers_input(long *stack_a, int *n_stack_a, char **argv, char **numbers_list)
+int	stack_sorted(long *stack_a, int *n_stack_a)
+{
+	int		i;
+	int		j;
+	long	max;
+
+	i = 1;
+	j = 0;
+	max = stack_a[0];
+	while (i < n_stack_a[1])
+	{
+		if (stack_a[i] > max)
+		{
+			max = stack_a[i];
+			j++;
+		}
+		i++;
+	}
+	if (j == n_stack_a[i] - 1)
+		return (0);
+	return (-1);
+}
+
+int	ft_atoi(const char *str)
 {
 	int	i;
-	int	numbers;
+	int	neg;
+	int	res;
 
 	i = 0;
-	numbers = 0;
-	numbers_list = ft_split(argv[1], 32);
-	while (numbers_list[i])
+	neg = 1;
+	res = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		numbers++;
+		if (str[i] == '-')
+			neg *= -1;
 		i++;
 	}
-	n_stack_a[0] = numbers;
-	n_stack_a[1] = n_stack_a[0];
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = (str[i] - '0') + (res * 10);
+		i++;
+	}
+	return (res * neg);
+}
+
+int	input_numbers_2(long *stack_a, int *n_stack_a, char **argv)
+{
+	int	i;
+
 	i = 0;
-	while (i < n_stack_a[0])
+	while (i < n_stack_a[1])
 	{
-		stack_a[i] = ft_atoi(numbers_list[i]);
+		if (only_numbers_in_stack(argv[i + 1]) == 1)
+			stack_a[i] = ft_atoi(argv[i + 1]);
+		else
+		{
+			write(1, "Error\n", 6);
+			return (-1);
+		}
 		i++;
 	}
-	free_string(numbers_list);
-	free(numbers_list);
 	return (0);
 }
 
-void	free_stacks(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+int	input_numbers(long *stack_a, int *n_stack_a, char **argv)
 {
-	free(stack_a);
-	free(stack_b);
-	free(n_stack_a);
-	free(n_stack_b);
-	exit(0);
-}
+	char	**numbers_list;
 
-void	ft_new_memory(long *pointer, int startsize, int newsize)
-{
-	int		i;
-	long	*temporary;
-
-	i = 0;
-	if ((pointer != NULL) && (startsize < newsize))
+	numbers_list = NULL;
+	if (n_stack_a[0] == 1)
 	{
-		temporary = malloc(sizeof(long) * (newsize));
-		while (i < startsize)
-		{
-			temporary[i] = pointer[i];
-			i++;
-		}
-		pointer = temporary;
-	}
-	else if ((pointer != NULL) && (startsize > newsize))
-	{
-		temporary = malloc(sizeof(long) * (newsize));
-		while (i < newsize)
-		{
-			temporary[i] = pointer[i];
-			i++;
-		}
-		pointer = temporary;
-	}
-}
-
-int	stack_size(int argc, char **argv)
-{
-	int	i;
-	int	size;
-
-	i = 0;
-	size = 1;
-	if (argc == 2)
-	{
-		while (argv[1][i])
-		{
-			if (argv[1][i] == 32)
-				size++;
-			i++;
-		}
+		if (numbers_input(stack_a, n_stack_a, argv, numbers_list) == -1)
+			return (-1);
 	}
 	else
-		size = argc - 1;
-	return (size);
+	{
+		if (input_numbers_2(stack_a, n_stack_a, argv) == -1)
+			return (-1);
+	}
+	if (repeated_checker(stack_a, n_stack_a[1]) == -1)
+		return (-1);
+	if (number_max(stack_a, n_stack_a[1] == -1))
+		return (-1);
+	return (0);
 }

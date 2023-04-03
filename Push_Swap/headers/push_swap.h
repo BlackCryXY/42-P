@@ -26,7 +26,6 @@
 
 char	**ft_split(char const *s, char c);
 void	second_stack_2(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
-int	ft_strlen(char *s);
 int	ft_isdigit(int i);
 int	only_numbers_in_stack(char *numbers);
 int	repeated_checker(long *stack_a, int n_stack_a);
@@ -38,6 +37,8 @@ int	input_numbers(long *stack_a, int *n_stack_a, char **argv);
 void	free_stacks(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
 void	ft_new_memory(long *pointer, int startsize, int newsize);
 int	stack_size(int argc, char **argv);
+int	numbers_input(long *stack_a, int *n_stack_a, char **argv, char **numbers_list);
+void	ft_free_string(char **str);
 
 //rules
 void	pa(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
