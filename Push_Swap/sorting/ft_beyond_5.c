@@ -105,7 +105,7 @@ void	radix_time(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	}
 }
 
-void	ft_beyond_5_(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	ft_beyond_5(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
 	long	*copy;
 	long	*copy_swap_stack_a;

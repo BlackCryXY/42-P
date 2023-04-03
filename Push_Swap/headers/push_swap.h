@@ -36,6 +36,7 @@ int	input_numbers_2(long *stack_a, int *n_stack_a, char **argv);
 int	input_numbers(long *stack_a, int *n_stack_a, char **argv);
 void	free_stacks(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
 void	ft_new_memory(long *pointer, int startsize, int newsize);
+int	stack_size(int argc, char **argv);
 
 //rules
 void	pa(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
@@ -51,6 +52,11 @@ void	sb(long *stack_b, int *stack_b);
 void	ss(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
 
 //sorting
+void	bubble_sort_the_stack(long *puntero, int *stack_size);
+void	swap_stack_a_first_time(long *copy, long *copy_swap_stack_a, long *stack_a, int *n_stack_a);
+void	swap_stack_a_second_time(long *copy, long *copy_swap_stack_a, long *stack_a, int *n_stack_a)
+void	radix_time(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
+void	ft_beyond_5(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
 void	sort_3_numbers(long *stack_a, int *n_stack_a);
 void	first_stack_1(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
 void	sort_4_numbers(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);

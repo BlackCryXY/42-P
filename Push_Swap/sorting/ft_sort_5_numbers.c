@@ -12,12 +12,6 @@
 
 #include "../headers/push_swap.h"
 
-void	rotate_a_twice(long *stack_a, int *n_stack_a)
-{
-	rotate_stack_a(stack_a, n_stack_a);
-	rotate_stack_a(stack_a, n_stack_a);
-}
-
 static void	reverse_rotate_a_twice(long *stack_a, int *n_stack_a)
 {
 	reverse_rotate_stack_a(stack_a, n_stack_a);
