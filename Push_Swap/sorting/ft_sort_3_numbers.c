@@ -12,7 +12,7 @@
 
 #include "../headers/push_swap.h"
 
-void	sort_3_numbers(long *stack_a, int *n_stack_a)
+void	ft_sort_3_numbers(long *stack_a, int *n_stack_a)
 {
 	if ((stack_a[0] > stack_a[1]) && (stack_a[1] < stack_a[2]) && (stack_a[0] < stack_a[2]))
 		sa(stack_a, n_stack_a);

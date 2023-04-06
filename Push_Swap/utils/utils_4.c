@@ -50,7 +50,7 @@ int	numbers_input(long *stack_a, int *n_stack_a, char **argv, char **numbers_lis
 	return (0);
 }
 
-void	free_stacks(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	free_all_stacks(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
 	free(stack_a);
 	free(stack_b);

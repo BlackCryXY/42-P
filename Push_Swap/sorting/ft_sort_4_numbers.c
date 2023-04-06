@@ -34,10 +34,10 @@ void	first_stack_1(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	}
 }
 
-void	sort_4_numbers(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	ft_sort_4_numbers(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
 	pb(stack_a, stack_b, n_stack_a, n_stack_b);
-	sort_3_numbers(stack_a, n_stack_a);
+	ft_sort_3_numbers(stack_a, n_stack_a);
 	while (*n_stack_b != 0)
 	{
 		if (n_stack_a[1] == 3)
