@@ -33,7 +33,7 @@ void	pa(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	(*n_stack_b)--;
 	if (*n_stack_b == 0)
 		stack_b = NULL;
-	write(1, "pa\n", 2);
+	write(1, "pa\n", 3);
 }
 
 void	pb(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
@@ -57,5 +57,5 @@ void	pb(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	(n_stack_a[1])--;
 	if (n_stack_a[1] == 0)
 		stack_a = NULL;
-	write(1,"pb\n", 2);
+	write(1,"pb\n", 3);
 }

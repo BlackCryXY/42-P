@@ -26,7 +26,7 @@ void	sa(long *stack_a, int *n_stack_a)
 		stack_a[1] = temp[0];
 	}
 	free(temp);
-	write(1, "sa\n", 2);
+	write(1, "sa\n", 3);
 }
 
 void	sb(long *stack_b, int *n_stack_b)
@@ -43,7 +43,7 @@ void	sb(long *stack_b, int *n_stack_b)
 		stack_b[1] = temp[0];
 	}
 	free(temp);
-	write(1, "sa\n", 2);
+	write(1, "sa\n", 3);
 }
 
 void	ss(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
@@ -66,5 +66,5 @@ void	ss(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 		stack_b[1] = temp[0];
 	}
 	free(temp);
-	write(1, "ss\n", 2);
+	write(1, "ss\n", 3);
 }

@@ -29,7 +29,7 @@ void	ra(long *stack_a, int *n_stack_a)
 	}
 	stack_a[n_stack_a[1] - 1] = *temp;
 	free(temp);
-	write(1, "ra\n", 2);
+	write(1, "ra\n", 3);
 }
 
 void	rb(long *stack_b, int *n_stack_b)
@@ -49,7 +49,7 @@ void	rb(long *stack_b, int *n_stack_b)
 	}
 	stack_b[*n_stack_b - 1] = *temp;
 	free(temp);
-	write(1, "rb\n", 2);
+	write(1, "rb\n", 3);
 }
 
 void	rr(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
@@ -77,5 +77,5 @@ void	rr(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	}
 	stack_b[*n_stack_b - 1] = *temp;
 	free(temp);
-	write(1, "rr\n", 2);
+	write(1, "rr\n", 3);
 }
