@@ -30,7 +30,7 @@ SOURCES	= rules/ft_push.c \
 OBJS = $(SOURCES:.c=.o)
 
 .c.o :
-	cc -Wall -Werror -Wextra -Iheaders -c $< -o ${<:.c=.o}
+	cc -Wall -Werror -Wextra -Iheaders -g3 -c $< -o ${<:.c=.o}
 
 NOC	= \033[0m
 GREEN	= \033[1;32m

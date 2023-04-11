@@ -112,7 +112,7 @@ void	ft_beyond_5(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 
 	copy = (long *)malloc(n_stack_a[0] * sizeof(long));
 	copy_swap_stack_a = (long *)malloc(n_stack_a[0] * sizeof(long));
-	if (!copy || copy_swap_stack_a)
+	if (!copy || !copy_swap_stack_a)
 		return ;
 	swap_stack_a_first_time(copy, copy_swap_stack_a, stack_a, n_stack_a);
 	bubble_sort_the_stack(copy, n_stack_a);

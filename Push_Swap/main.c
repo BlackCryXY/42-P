@@ -81,7 +81,10 @@ int	main(int argc, char **argv)
 	if (!stack_a || !stack_b)
 		return (0);
 	if ((input_numbers(stack_a, n_stack_a, argv) == -1) || (stack_sorted(stack_a, n_stack_a) == 0))
-		free_all_stacks(stack_a, stack_b, n_stack_a, n_stack_b);
+		{
+			free_all_stacks(stack_a, stack_b, n_stack_a, n_stack_b);
+			return 0;
+		}
 	if ((n_stack_a[1] == 2) && (stack_a[0] > stack_a[1]))
 		ra(stack_a, n_stack_a);
 	else if (n_stack_a[1] == 3)
