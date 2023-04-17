@@ -40,22 +40,30 @@ void	pb(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
 	int	i;
 
-	(*n_stack_b)++;
-	i = *n_stack_b - 1;
-	while (i > 0)
+	if (n_stack_a[1] > 0) 
 	{
-		stack_b[i] = stack_b[i - 1];
-		i--;
+		(*n_stack_b)++;
+		if (!stack_b)
+			return ;
+		i = *n_stack_b - 1;
+		while (i > 0)
+		{
+			stack_b[i] = stack_b[i - 1];
+			i--;
+		}
+		stack_b[0] = stack_a[0];
+		if (n_stack_a[1] > 0)
+		{
+			i = 0;
+			while (i < n_stack_a[1])
+			{
+				stack_a[i] = stack_a[i + 1];
+				i++;
+			}
+			(n_stack_a[1])--;
+			if (n_stack_a[1] == 0)
+				stack_a[0] = '\0';
+		}
 	}
-	stack_b[0] = stack_a[0];
-	i = 0;
-	while (i < n_stack_a[1])
-	{
-		stack_a[i] = stack_a[i + 1];
-		i++;
-	}
-	(n_stack_a[1])--;
-	if (n_stack_a[1] == 0)
-		stack_a = NULL;
-	write(1,"pb\n", 3);
+	write(1, "pb\n", 3);
 }

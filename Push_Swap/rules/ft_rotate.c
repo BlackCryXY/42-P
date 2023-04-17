@@ -22,7 +22,7 @@ void	ra(long *stack_a, int *n_stack_a)
 	if (!temp)
 		return ;
 	*temp = stack_a[0];
-	while (i < n_stack_a[1])
+	while (i < n_stack_a[1] - 1)
 	{
 		stack_a[i] = stack_a[i + 1];
 		i++;

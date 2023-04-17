@@ -30,7 +30,7 @@ int	stack_sorted(long *stack_a, int *n_stack_a)
 		}
 		i++;
 	}
-	if (j == n_stack_a[i] - 1)
+	if (j == n_stack_a[1] - 1)
 		return (0);
 	return (-1);
 }

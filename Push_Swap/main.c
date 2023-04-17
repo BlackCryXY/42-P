@@ -71,15 +71,23 @@ int	main(int argc, char **argv)
 	int		*n_stack_b;
 
 	n_stack_a = (int *)malloc(2 * sizeof(int));
-	n_stack_b = (int *)malloc(sizeof(int));
-	if (!n_stack_a || !n_stack_b)
+	if (!n_stack_a)
 		return (0);
+	n_stack_b = (int *)malloc(sizeof(int));
+	if (!n_stack_b)
+	{
+		free(n_stack_b);
+		return (0);
+	}
 	check_parameters(argc, argv, n_stack_a, n_stack_b);
 	set_numbers(n_stack_a, n_stack_b, argc);
 	stack_a = (long *)malloc(sizeof(long) * stack_size(argc, argv));
 	stack_b = (long *)malloc(sizeof(long) * stack_size(argc, argv));
 	if (!stack_a || !stack_b)
+	{
+		free_all_stacks(stack_a, stack_b, n_stack_a, n_stack_b);
 		return (0);
+	}
 	if ((input_numbers(stack_a, n_stack_a, argv) == -1) || (stack_sorted(stack_a, n_stack_a) == 0))
 		{
 			free_all_stacks(stack_a, stack_b, n_stack_a, n_stack_b);
