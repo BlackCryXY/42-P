@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:35:20 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/24 08:36:06 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/04/25 14:51:15 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(int argc, char **argv)
 	n_stack_b = (int *)malloc(sizeof(int));
 	if (!n_stack_b)
 	{
-		free(n_stack_b);
+		free(n_stack_a);
 		return (0);
 	}
 	check_parameters(argc, argv, n_stack_a, n_stack_b);
