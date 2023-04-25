@@ -24,7 +24,8 @@ static void	rotate_a_twice(long *stack_a, int *n_stack_a)
 	ra(stack_a, n_stack_a);
 }
 
-void	first_stack_2(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	first_stack_2(long *stack_a, long *stack_b, int *n_stack_a,
+		int *n_stack_b)
 {
 	if (stack_b[0] < stack_a[0])
 		pa(stack_a, stack_b, n_stack_a, n_stack_b);
@@ -47,7 +48,8 @@ void	first_stack_2(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	}
 }
 
-void	second_stack(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	second_stack(long *stack_a, long *stack_b, int *n_stack_a,
+		int *n_stack_b)
 {
 	if (stack_b[0] < stack_a[0])
 		pa(stack_a, stack_b, n_stack_a, n_stack_b);
@@ -74,7 +76,8 @@ void	second_stack(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 		second_stack_2(stack_a, stack_b, n_stack_a, n_stack_b);
 }
 
-void	ft_sort_5_numbers(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	ft_sort_5_numbers(long *stack_a, long *stack_b, int *n_stack_a,
+		int *n_stack_b)
 {
 	pb(stack_a, stack_b, n_stack_a, n_stack_b);
 	pb(stack_a, stack_b, n_stack_a, n_stack_b);

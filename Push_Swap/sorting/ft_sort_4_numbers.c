@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 #include "../headers/push_swap.h"
 
-void	first_stack_1(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	first_stack_1(long *stack_a, long *stack_b, int *n_stack_a,
+		int *n_stack_b)
 {
 	if (stack_b[0] < stack_a[0])
 		pa(stack_a, stack_b, n_stack_a, n_stack_b);
@@ -34,7 +35,8 @@ void	first_stack_1(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	}
 }
 
-void	ft_sort_4_numbers(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	ft_sort_4_numbers(long *stack_a, long *stack_b, int *n_stack_a,
+		int *n_stack_b)
 {
 	pb(stack_a, stack_b, n_stack_a, n_stack_b);
 	ft_sort_3_numbers(stack_a, n_stack_a);

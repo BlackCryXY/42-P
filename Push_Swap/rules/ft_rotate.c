@@ -14,7 +14,7 @@
 
 void	ra(long *stack_a, int *n_stack_a)
 {
-	int	i;
+	int		i;
 	long	*temp;
 
 	i = 0;
@@ -34,7 +34,7 @@ void	ra(long *stack_a, int *n_stack_a)
 
 void	rb(long *stack_b, int *n_stack_b)
 {
-	int	i;
+	int		i;
 	long	*temp;
 
 	i = 0;
@@ -54,7 +54,7 @@ void	rb(long *stack_b, int *n_stack_b)
 
 void	rr(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
-	int	i;
+	int		i;
 	long	*temp;
 
 	i = 0;

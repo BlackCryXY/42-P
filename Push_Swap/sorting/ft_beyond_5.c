@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:27:09 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/24 08:34:16 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/04/25 15:00:14 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	bubble_sort_the_stack(long *puntero, int *stack_size)
 
 //This function copies the stack the first time
 
-void	swap_stack_a_first_time(long *copy, long *copy_swap_stack_a, long *stack_a, int *n_stack_a)
+void	swap_stack_a_first_time(long *copy, long *copy_swap_stack_a,
+		long *stack_a, int *n_stack_a)
 {
 	int	i;
 
@@ -54,9 +55,12 @@ void	swap_stack_a_first_time(long *copy, long *copy_swap_stack_a, long *stack_a,
 	}
 }
 
-//This function creates a "record" between the elements of the two stacks so they can be sorted independently while being able to reference the original positions
+//This function creates a "record" between the elements of 
+//the two stacks so they can be sorted independently 
+//while being able to reference the original positions
 
-void	swap_stack_a_second_time(long *copy, long *copy_swap_stack_a, long *stack_a, int *n_stack_a)
+void	swap_stack_a_second_time(long *copy, long *copy_swap_stack_a,
+		long *stack_a, int *n_stack_a)
 {
 	int	i;
 	int	j;
@@ -69,7 +73,7 @@ void	swap_stack_a_second_time(long *copy, long *copy_swap_stack_a, long *stack_a
 		while (j < n_stack_a[0])
 		{
 			if (copy_swap_stack_a[i] == copy[j])
-					stack_a[i] = j;
+				stack_a[i] = j;
 			j++;
 		}
 		++i;
@@ -105,7 +109,8 @@ void	radix_time(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 	}
 }
 
-void	ft_beyond_5(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	ft_beyond_5(long *stack_a, long *stack_b, int *n_stack_a,
+		int *n_stack_b)
 {
 	long	*copy;
 	long	*copy_swap_stack_a;

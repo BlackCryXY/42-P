@@ -85,9 +85,9 @@ static char	**ft_prepare_split(char const *s, char c)
 
 static void	ft_fill_words(char const *s, char c, char **output)
 {
-	int		wordcount;
-	int		charcount;
-	int		i;
+	int	wordcount;
+	int	charcount;
+	int	i;
 
 	wordcount = 0;
 	i = 0;

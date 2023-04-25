@@ -12,19 +12,20 @@
 
 #include "../headers/push_swap.h"
 
-void    ft_free_string(char **str)
+void	ft_free_string(char **str)
 {
-        int     i;
+	int	i;
 
-        i = 0;
-        while (str[i])
-        {
-                free(str[i]);
-                i++;
-        }
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
 }
 
-int	numbers_input(long *stack_a, int *n_stack_a, char **argv, char **numbers_list)
+int	numbers_input(long *stack_a, int *n_stack_a, char **argv,
+		char **numbers_list)
 {
 	int	i;
 	int	numbers;
@@ -50,7 +51,8 @@ int	numbers_input(long *stack_a, int *n_stack_a, char **argv, char **numbers_lis
 	return (0);
 }
 
-void	free_all_stacks(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	free_all_stacks(long *stack_a, long *stack_b, int *n_stack_a,
+		int *n_stack_b)
 {
 	free(stack_a);
 	free(stack_b);

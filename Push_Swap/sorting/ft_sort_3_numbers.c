@@ -14,20 +14,25 @@
 
 void	ft_sort_3_numbers(long *stack_a, int *n_stack_a)
 {
-	if ((stack_a[0] > stack_a[1]) && (stack_a[1] < stack_a[2]) && (stack_a[0] < stack_a[2]))
+	if ((stack_a[0] > stack_a[1]) && (stack_a[1] < stack_a[2])
+		&& (stack_a[0] < stack_a[2]))
 		sa(stack_a, n_stack_a);
-	if ((stack_a[0] > stack_a[1]) && (stack_a[1] > stack_a[2]) && (stack_a[0] > stack_a[2]))
+	if ((stack_a[0] > stack_a[1]) && (stack_a[1] > stack_a[2])
+		&& (stack_a[0] > stack_a[2]))
 	{
 		sa(stack_a, n_stack_a);
 		rra(stack_a, n_stack_a);
 	}
-	if ((stack_a[0] > stack_a[1]) && (stack_a[1] < stack_a[2]) && (stack_a[0] > stack_a[2]))
+	if ((stack_a[0] > stack_a[1]) && (stack_a[1] < stack_a[2])
+		&& (stack_a[0] > stack_a[2]))
 		ra(stack_a, n_stack_a);
-	if ((stack_a[0] < stack_a[1]) && (stack_a[1] > stack_a[2]) && (stack_a[0] < stack_a[2]))
+	if ((stack_a[0] < stack_a[1]) && (stack_a[1] > stack_a[2])
+		&& (stack_a[0] < stack_a[2]))
 	{
 		sa(stack_a, n_stack_a);
 		ra(stack_a, n_stack_a);
 	}
-	if ((stack_a[0] < stack_a[1]) && (stack_a[1] > stack_a[2]) && (stack_a[0] > stack_a[2]))
+	if ((stack_a[0] < stack_a[1]) && (stack_a[1] > stack_a[2])
+		&& (stack_a[0] > stack_a[2]))
 		rra(stack_a, n_stack_a);
 }

@@ -40,7 +40,7 @@ void	pb(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
 	int	i;
 
-	if (n_stack_a[1] > 0) 
+	if (n_stack_a[1] > 0)
 	{
 		(*n_stack_b)++;
 		if (!stack_b)
