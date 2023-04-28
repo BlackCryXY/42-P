@@ -6,7 +6,7 @@
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:53:47 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/07 13:54:46 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:48:04 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	pa(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 
 void	pb(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
-	int	i;
+		int	i;
 
 	if (n_stack_a[1] > 0)
 	{

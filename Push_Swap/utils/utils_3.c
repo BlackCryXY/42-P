@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_2.c                                          :+:      :+:    :+:   */
+/*   utils_3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 08:35:00 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/03/24 08:35:01 by tsantiag         ###   ########.fr       */
+/*   Updated: 2023/04/28 16:56:14 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	input_numbers(long *stack_a, int *n_stack_a, char **argv)
 	}
 	if (repeated_checker(stack_a, n_stack_a[1]) == -1)
 		return (-1);
-	if (number_max(stack_a, n_stack_a[1] == -1))
+	if (number_max(stack_a, n_stack_a[1]) == -1)
 		return (-1);
 	return (0);
 }
