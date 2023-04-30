@@ -39,6 +39,7 @@ int	only_numbers_in_stack(char *numbers)
 	return (1);
 }
 //see if i need to make another n_stack_a non pointer
+
 int	repeated_checker(t_pushswap *n)
 {
 	int	i;

@@ -14,41 +14,39 @@
 
 void	free_stacks(t_pushswap *n)
 {
-	free(n->numa);
-	free(n->numb);
-	exit(0);
+	if (n->a)
+		free(n->a);
+	if (n->b)
+		free(n->b);
+	if (n->numa)
+		free(n->numa);
+	if (n->numa)
+		free(n->numb);
 }
 
 void	free_with_error(t_pushswap *n)
 {
-	free(n->numa);
-	free(n->numb);
+	free_all_stacks(n);
 	write(1, "Error\n", 6);
 	exit(0);
 }
 
 void	check_parameters(int argc, char **argv, t_pushswap *n)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 1;
-	j = 0;
 	if (argc < 2)
-		free_stacks(n);
+		free_all_stacks(n);
 	while (i < argc)
 	{
-		if ((argv[i][ft_strlen(argv[i]) - 1] == ' ') || (argv[i][0] == ' '))
+		if (argv[i][0] == '\0')
 			free_with_error(n);
 		j = 0;
 		while (j < ft_strlen(argv[i]))
 		{
-			if (((argv[i][j] < 48) || (argv[i][j] > 57)) && (argv[i][j] != 32))
-			{
-				if (argv[i][j] != 45)
-					free_with_error(n);
-			}
-			if ((argv[i][j] == 32) && (argv[i][j + 1] == 32))
+			if (!ft_isdigit(argv[i][j]) && !ft_isspace(argv[i][j]) && argv[i][j] != '-')
 				free_with_error(n);
 			j++;
 		}
@@ -65,18 +63,18 @@ void	set_numbers(t_pushswap *n, int argc)
 
 int	main(int argc, char **argv)
 {
-	t_pushswap *n;
-	
-	n = NULL;
-	n->numa = (int *)malloc(2 * sizeof(int));
-	if (n->numa)
+	t_pushswap	*n;
+
+	n = (t_pushswap*)malloc(sizeof(t_pushswap));
+	if (!n)
 		return (0);
-	n->numb = (int *)malloc(sizeof(int));
-	if (!n->numb)
+	n->numa = (int *)malloc(2 * sizeof(int));
+	if (!n->numa)
 	{
-		free(n->numa);
+		free(n);
 		return (0);
 	}
+	n->numb = NULL;
 	check_parameters(argc, argv, n);
 	set_numbers(n, argc);
 	n->a = (long *)malloc(sizeof(long) * stack_size(argc, argv));
@@ -86,8 +84,7 @@ int	main(int argc, char **argv)
 		free_all_stacks(n);
 		return (0);
 	}
-	if ((input_numbers(n, argv) == -1)
-		|| (stack_sorted(n) == 0))
+	if ((input_numbers(n, argv) == -1) || (stack_sorted(n) == 0))
 	{
 		free_all_stacks(n);
 		return (0);

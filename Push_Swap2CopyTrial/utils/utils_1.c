@@ -20,7 +20,7 @@ void	second_stack_2(t_pushswap *n)
 
 int	ft_strlen(const char *str)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	if (!str)
@@ -28,4 +28,10 @@ int	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+int	ft_isspace(int c)
+{
+	return (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\r' || c == '\v' || c == '\f');
 }

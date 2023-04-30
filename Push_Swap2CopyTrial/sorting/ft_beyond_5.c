@@ -55,8 +55,8 @@ void	swap_stack_a_first_time(long *copy, long *copy_swap_stack_a,
 	}
 }
 
-//This function creates a "record" between the elements of 
-//the two stacks so they can be sorted independently 
+//This function creates a "record" between the elements of
+//the two stacks so they can be sorted independently
 //while being able to reference the original positions
 
 void	swap_stack_a_second_time(long *copy, long *copy_swap_stack_a,
