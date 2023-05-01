@@ -70,15 +70,7 @@ int	main(int argc, char **argv)
 	int		*n_stack_a;
 	int		*n_stack_b;
 
-	n_stack_a = (int *)malloc(2 * sizeof(int));
-	if (!n_stack_a)
-		return (0);
-	n_stack_b = (int *)malloc(sizeof(int));
-	if (!n_stack_b)
-	{
-		free(n_stack_a);
-		return (0);
-	}
+	init_number(&n_stack_a, &n_stack_b);
 	check_parameters(argc, argv, n_stack_a, n_stack_b);
 	set_numbers(n_stack_a, n_stack_b, argc);
 	stack_a = (long *)malloc(sizeof(long) * stack_size(argc, argv));
@@ -94,16 +86,6 @@ int	main(int argc, char **argv)
 		free_all_stacks(stack_a, stack_b, n_stack_a, n_stack_b);
 		return (0);
 	}
-	if ((n_stack_a[1] == 2) && (stack_a[0] > stack_a[1]))
-		ra(stack_a, n_stack_a);
-	else if (n_stack_a[1] == 3)
-		ft_sort_3_numbers(stack_a, n_stack_a);
-	else if (n_stack_a[1] == 4)
-		ft_sort_4_numbers(stack_a, stack_b, n_stack_a, n_stack_b);
-	else if (n_stack_a[1] == 5)
-		ft_sort_5_numbers(stack_a, stack_b, n_stack_a, n_stack_b);
-	else
-		ft_beyond_5(stack_a, stack_b, n_stack_a, n_stack_b);
-	free_all_stacks(stack_a, stack_b, n_stack_a, n_stack_b);
+	sorting_main(stack_a, stack_b, n_stack_a, n_stack_b);
 	return (0);
 }
