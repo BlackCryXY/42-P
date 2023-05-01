@@ -50,10 +50,8 @@ int	numbers_input(t_pushswap *n, char **argv, char **numbers_list)
 	return (0);
 }
 
-void	free_all_stacks(t_pushswap *n)
+void	free_nmber_stacks(t_pushswap *n)
 {
-	free(n->a);
-	free(n->b);
 	free(n->numa);
 	free(n->numb);
 	exit(0);

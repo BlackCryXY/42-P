@@ -40,10 +40,11 @@ int			stack_sorted(t_pushswap *n);
 int			ft_atoi(const char *str);
 int			input_numbers_2(t_pushswap *n, char **argv);
 int			input_numbers(t_pushswap *n, char **argv);
-void		free_all_stacks(t_pushswap *n);
+void		free_nmber_stacks(t_pushswap *n);
 int			stack_size(int argc, char **argv);
 int			numbers_input(t_pushswap *n, char **argv, char **numbers_list);
 void		ft_free_string(char **str);
+void		free_all_stacks(t_pushswap *n);
 
 void		push(t_pushswap *n);
 void		pa(t_pushswap *n);

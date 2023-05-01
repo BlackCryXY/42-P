@@ -38,7 +38,7 @@ void	pa(t_pushswap *n)
 
 void	push(t_pushswap *n)
 {
-	if (n->numa <= 0)
+	if (*n->numa <= 0)
 		return ;
 	(n->numb)++;
 	if (!n->numb)
@@ -49,7 +49,7 @@ void	push(t_pushswap *n)
 		(n->numb)--;
 	}
 	n->b[0] = n->a[0];
-	while ((n->numa)-- > 0)
+	while ((*n->numa)-- > 0)
 		n->a[(*n->numa)] = n->a[(*n->numa) + 1];
 	write(1, "pb\n", 3);
 }

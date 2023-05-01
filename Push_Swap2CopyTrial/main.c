@@ -12,7 +12,7 @@
 
 #include "../headers/push_swap.h"
 
-void	free_stacks(t_pushswap *n)
+void	free_all_stacks(t_pushswap *n)
 {
 	if (n->a)
 		free(n->a);
@@ -38,7 +38,7 @@ void	check_parameters(int argc, char **argv, t_pushswap *n)
 
 	i = 1;
 	if (argc < 2)
-		free_all_stacks(n);
+		free_nmber_stacks(n);
 	while (i < argc)
 	{
 		if (argv[i][0] == '\0')
