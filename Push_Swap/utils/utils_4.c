@@ -61,34 +61,6 @@ void	free_all_stacks(long *stack_a, long *stack_b, int *n_stack_a,
 	exit(0);
 }
 
-void	ft_new_memory(long *pointer, int startsize, int newsize)
-{
-	int		i;
-	long	*temporary;
-
-	i = 0;
-	if ((pointer != NULL) && (startsize < newsize))
-	{
-		temporary = malloc(sizeof(long) * (newsize));
-		while (i < startsize)
-		{
-			temporary[i] = pointer[i];
-			i++;
-		}
-		pointer = temporary;
-	}
-	else if ((pointer != NULL) && (startsize > newsize))
-	{
-		temporary = malloc(sizeof(long) * (newsize));
-		while (i < newsize)
-		{
-			temporary[i] = pointer[i];
-			i++;
-		}
-		pointer = temporary;
-	}
-}
-
 int	stack_size(int argc, char **argv)
 {
 	int	i;

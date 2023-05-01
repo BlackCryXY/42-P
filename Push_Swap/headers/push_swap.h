@@ -33,7 +33,6 @@ int		input_numbers_2(long *stack_a, int *n_stack_a, char **argv);
 int		input_numbers(long *stack_a, int *n_stack_a, char **argv);
 void	free_all_stacks(long *stack_a, long *stack_b, int *n_stack_a,
 			int *n_stack_b);
-void	ft_new_memory(long *pointer, int startsize, int newsize);
 int		stack_size(int argc, char **argv);
 int		numbers_input(long *stack_a, int *n_stack_a, char **argv,
 			char **numbers_list);
@@ -50,6 +49,7 @@ void	rr(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
 void	sa(long *stack_a, int *n_stack_a);
 void	sb(long *stack_b, int *n_stack_b);
 void	ss(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
+//void	push(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
 
 void	bubble_sort_the_stack(long *puntero, int *stack_size);
 void	swap_stack_a_first_time(long *copy, long *copy_swap_stack_a,

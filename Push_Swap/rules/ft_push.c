@@ -38,32 +38,26 @@ void	pa(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 
 void	pb(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
 {
-		int	i;
+	int	i;
 
-	if (n_stack_a[1] > 0)
+	if (n_stack_a[1] <= 0)
+		return ;
+	(*n_stack_b)++;
+	if (!stack_b)
+		return ;
+	i = *n_stack_b - 1;
+	while (i > 0)
 	{
-		(*n_stack_b)++;
-		if (!stack_b)
-			return ;
-		i = *n_stack_b - 1;
-		while (i > 0)
-		{
-			stack_b[i] = stack_b[i - 1];
-			i--;
-		}
-		stack_b[0] = stack_a[0];
-		if (n_stack_a[1] > 0)
-		{
-			i = 0;
-			while (i < n_stack_a[1])
-			{
-				stack_a[i] = stack_a[i + 1];
-				i++;
-			}
-			(n_stack_a[1])--;
-			if (n_stack_a[1] == 0)
-				stack_a[0] = '\0';
-		}
+		stack_b[i] = stack_b[i - 1];
+		i--;
 	}
+	stack_b[0] = stack_a[0];
+	i = 0;
+	while (i < n_stack_a[1] - 1)
+	{
+		stack_a[i] = stack_a[i + 1];
+		i++;
+	}
+	n_stack_a[1]--;
 	write(1, "pb\n", 3);
 }
