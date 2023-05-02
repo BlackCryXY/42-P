@@ -38,7 +38,8 @@ int		numbers_input(long *stack_a, int *n_stack_a, char **argv,
 			char **numbers_list);
 void	ft_free_string(char **str);
 void	init_number(int **n_stack_a, int **n_stack_b);
-void	sorting_main(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
+void	sorting_main(long *stack_a, long *stack_b, int *n_stack_a,
+			int *n_stack_b);
 
 void	pa(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);
 void	pb(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b);

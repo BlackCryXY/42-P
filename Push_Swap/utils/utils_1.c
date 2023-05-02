@@ -31,7 +31,8 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-void	sorting_main(long *stack_a, long *stack_b, int *n_stack_a, int *n_stack_b)
+void	sorting_main(long *stack_a, long *stack_b, int *n_stack_a,
+		int *n_stack_b)
 {
 	if ((n_stack_a[1] == 2) && (stack_a[0] > stack_a[1]))
 		ra(stack_a, n_stack_a);
