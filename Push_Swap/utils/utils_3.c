@@ -35,11 +35,11 @@ int	stack_sorted(long *stack_a, int *n_stack_a)
 	return (-1);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atol(const char *str)
 {
-	int	i;
-	int	neg;
-	int	res;
+	int			i;
+	int			neg;
+	long int	res;
 
 	i = 0;
 	neg = 1;
@@ -68,7 +68,7 @@ int	input_numbers_2(long *stack_a, int *n_stack_a, char **argv)
 	while (i < n_stack_a[1])
 	{
 		if (only_numbers_in_stack(argv[i + 1]) == 1)
-			stack_a[i] = ft_atoi(argv[i + 1]);
+			stack_a[i] = ft_atol(argv[i + 1]);
 		else
 		{
 			write(1, "Error\n", 6);

@@ -70,7 +70,7 @@ int	number_max(long *stack_a, int n_stack_a)
 	i = 0;
 	while (i < n_stack_a)
 	{
-		if ((stack_a[i] > 2147483647) || (stack_a[i] < -2147483647))
+		if ((stack_a[i] > 2147483647) || (stack_a[i] < -2147483648))
 		{
 			write(1, "Error\n", 6);
 			return (-1);

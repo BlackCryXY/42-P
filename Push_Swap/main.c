@@ -38,9 +38,9 @@ void	check_parameters(int argc, char **argv, int *n_stack_a, int *n_stack_b)
 		free_stacks(n_stack_a, n_stack_b);
 	while (i < argc)
 	{
-		if ((argv[i][ft_strlen(argv[i]) - 1] == ' ') || (argv[i][0] == ' ') || (argv[i][0] == '\0'))
+		if ((argv[i][ft_strlen(argv[i]) - 1] == ' ') || (argv[i][0] == ' ')
+			|| (argv[i][0] == '\0'))
 			free_with_error(n_stack_a, n_stack_b);
-		j = 0;
 		while (j < ft_strlen(argv[i]))
 		{
 			if (((argv[i][j] < 48) || (argv[i][j] > 57)) && (argv[i][j] != 32))

@@ -43,7 +43,7 @@ int	numbers_input(long *stack_a, int *n_stack_a, char **argv,
 	i = 0;
 	while (i < n_stack_a[0])
 	{
-		stack_a[i] = ft_atoi(numbers_list[i]);
+		stack_a[i] = ft_atol(numbers_list[i]);
 		i++;
 	}
 	ft_free_string(numbers_list);
