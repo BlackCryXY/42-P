@@ -2,15 +2,15 @@ SERVER = server
 CLIENT = client
 
 CFLAGS = -Wall -Werror -Wextra
-CC = gcc
+CC = cc
 FLAGS = -Wall -Wextra -Werror -I$(PRINTF)/headers -L$(PRINTF) -lftprintf
 
 PRINTF = ft_printf
 
 all:
 	@make -s -C $(PRINTF)
-	@gcc $(FLAGS) server.c -o $(SERVER)
-	@gcc $(FLAGS) client.c -o $(CLIENT)
+	@cc $(FLAGS) server.c -o $(SERVER)
+	@cc $(FLAGS) client.c -o $(CLIENT)
 	@echo "Server And Client Are Ready!"
 
 clean:
