@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../includes/printf.h"
 
-int	ft_treat_char(char c , int *len)
+int	ft_treat_char(char c, int *len)
 {
 	write(1, &c, 1);
 	(*len)++;

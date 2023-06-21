@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../includes/printf.h"
 
 int	ft_treat_hexa(unsigned int h, int len, char picker)
 {
 	char	str[30];
 	char	*base_char;
-	int	i;
+	int		i;
 
 	if (picker == 'X')
 		base_char = "0123456789ABCDEF";

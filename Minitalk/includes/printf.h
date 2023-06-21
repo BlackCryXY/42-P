@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_printf(const char *, ...);
+int		ft_printf(const char *input, ...);
 void	ft_putchar(int c);
 int		ft_strlen(char *str);
 char	*ft_strdup(const char *s1);
@@ -34,7 +34,7 @@ int		ft_treat_nbr(va_list list);
 int		ft_sizeint(unsigned int n);
 int		ft_treat_char(va_list list);
 bool	ft_is_true(char c);
-int	ft_process_lists(const char *str, va_list list);
-int	ft_treat_input(char c, va_list list);
+int		ft_process_lists(const char *str, va_list list);
+int		ft_treat_input(char c, va_list list);
 
 #endif

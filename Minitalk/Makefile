@@ -1,11 +1,11 @@
 SERVER = server
 CLIENT = client
 
-CFLAGS = -Wall -Werror -Wextra
-CC = cc
-FLAGS = -Wall -Wextra -Werror -I$(PRINTF)/headers -L$(PRINTF) -lftprintf
+SRC	= srcs/client.c \
+		srcs/server.c
+OBJS = $(SRC:.c=.o)
 
-PRINTF = ft_printf
+PRINTF = ft_printf/*.c
 
 all:
 	@make -s -C $(PRINTF)

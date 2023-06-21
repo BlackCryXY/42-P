@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/21 15:04:20 by tsantiag          #+#    #+#             */
+/*   Updated: 2023/06/21 15:04:24 by tsantiag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
-s_server    t_server;
+s_server	g_server;
 
 void	receive_bit_message(int sig)
 {
 	if (sig == SIGUSR1)
 	{
 		ft_printf("message received\n");
-		exit (0);
+		exit(0);
 	}
 	else if (sig == SIGUSR2)
 		t_server.received_bit = 1;

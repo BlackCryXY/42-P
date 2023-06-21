@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "../includes/printf.h"
 
 static void	ft_checker(char c, va_list *ar, int len, int *i)
 {
@@ -32,24 +32,23 @@ static void	ft_checker(char c, va_list *ar, int len, int *i)
 		ft_treat_char('%', len);
 	else
 		(*i)--;
-}	
-
+}
 
 int	ft_printf(const char *input, ...)
 {
 	va_list	args;
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 
 	i = 0;
 	len = 0;
-	va_start(args, input)
+	va_start(args, input);
 	while (input[i] != '\0')
 	{
 		if (input[i] == '%')
 		{
 			i++;
-			ft_checker(input[i], &args, $len, $i);
+			ft_checker(input[i], &args, &len, &i);
 			i++;
 		}
 		else
