@@ -10,9 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../includes/minitalk.h"
+#include "../includes/ft_printf.h"
 
-s_server	g_server;
+t_server	g_server;
 
 void	receive_bit_message(int sig)
 {
@@ -22,7 +23,7 @@ void	receive_bit_message(int sig)
 		exit(0);
 	}
 	else if (sig == SIGUSR2)
-		t_server.received_bit = 1;
+		g_server.received_bit = 1;
 }
 
 void	send_char(int pid, char c)
@@ -38,7 +39,7 @@ void	send_char(int pid, char c)
 			kill(pid, SIGUSR2);
 		bit /= 2;
 		sleep(1);
-		while (!t_server.received_bit)
+		while (!g_server.received_bit)
 			pause();
 	}
 }
@@ -55,7 +56,7 @@ void	send_str(int pid, char *str)
 
 int	main(int ac, char **av)
 {
-	t_server.received_bit = 0;
+	g_server.received_bit = 0;
 	signal(SIGUSR1, receive_bit_message);
 	signal(SIGUSR2, receive_bit_message);
 	if (ac == 3 && !(ft_atoi(av[1]) <= 0))

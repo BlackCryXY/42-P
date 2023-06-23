@@ -6,13 +6,13 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 11:04:31 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/11/17 12:08:49 by tsantiag         ###   ########.fr       */
+/*   Updated: 2022/11/18 18:17:22 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_treat_hexa(unsigned int h, int len, char picker)
+void	ft_treat_hexa(unsigned int h, int *len, char picker)
 {
 	char	str[30];
 	char	*base_char;

@@ -16,10 +16,9 @@
 # include <signal.h>
 # include <unistd.h>
 
-typedef struct s_server
-{
-	int					received_bit;
-}						t_server;
+typedef struct s_server {
+	int	received_bit;
+}				t_server;
 
 static unsigned char	*stock_message(unsigned char *str, unsigned char c);
 void					print_str(unsigned char *str, int client_pid);

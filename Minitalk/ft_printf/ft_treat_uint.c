@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/21 14:27:18 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/06/21 14:27:21 by tsantiag         ###   ########.fr       */
+/*   Created: 2022/11/18 16:45:42 by tsantiag          #+#    #+#             */
+/*   Updated: 2022/11/18 17:25:50 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 
 void	ft_treat_uint(unsigned int i, int *len)
 {
 	if (i >= 10)
-		ft_treat_uint(u / 10, len);
+		ft_treat_uint(i / 10, len);
 	ft_treat_char(i % 10 + '0', len);
 }

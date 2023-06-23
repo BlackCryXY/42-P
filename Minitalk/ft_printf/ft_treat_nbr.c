@@ -6,13 +6,13 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 09:41:52 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/11/17 10:58:43 by tsantiag         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:14:53 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 
-void	ft_treat_nbr(int nbr, int len)
+void	ft_treat_nbr(int nbr, int *len)
 {
 	if (nbr == -2147483648)
 	{

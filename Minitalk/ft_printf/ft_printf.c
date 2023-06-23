@@ -6,28 +6,28 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:19:53 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/11/16 17:41:54 by tsantiag         ###   ########.fr       */
+/*   Updated: 2022/11/19 11:42:21 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 
-static void	ft_checker(char c, va_list *ar, int len, int *i)
+static void	ft_checker(char c, va_list *ar, int *len, int *i)
 {
 	if (c == 's')
-		ft_treat_string(va_arg(*args, char *), len);
+		ft_treat_string(va_arg(*ar, char *), len);
 	else if (c == 'd' || c == 'i')
-		ft_treat_nbr(va_arg(*args, int), len);
+		ft_treat_nbr(va_arg(*ar, int), len);
 	else if (c == 'u')
-		ft_treat_uint(va_arg(*args, unsigned int), len);
+		ft_treat_uint(va_arg(*ar, unsigned int), len);
 	else if (c == 'x')
-		ft_treat_hexa(va_arg(*args, unsigned int), len, 'x');
+		ft_treat_hexa(va_arg(*ar, unsigned int), len, 'x');
 	else if (c == 'X')
-		ft_treat_hexa(va_arg(*args, unsigned int), len, 'X');
+		ft_treat_hexa(va_arg(*ar, unsigned int), len, 'X');
 	else if (c == 'p')
-		ft_treat_pointer(va_arg(*args, size_t), len);
+		ft_treat_pointer(va_arg(*ar, size_t), len);
 	else if (c == 'c')
-		ft_treat_char(va_arg(*args, int), len);
+		ft_treat_char(va_arg(*ar, int), len);
 	else if (c == '%')
 		ft_treat_char('%', len);
 	else
@@ -36,19 +36,19 @@ static void	ft_checker(char c, va_list *ar, int len, int *i)
 
 int	ft_printf(const char *input, ...)
 {
-	va_list	args;
+	va_list	ar;
 	int		i;
 	int		len;
 
 	i = 0;
 	len = 0;
-	va_start(args, input);
+	va_start(ar, input);
 	while (input[i] != '\0')
 	{
 		if (input[i] == '%')
 		{
 			i++;
-			ft_checker(input[i], &args, &len, &i);
+			ft_checker(input[i], &ar, &len, &i);
 			i++;
 		}
 		else
@@ -57,6 +57,6 @@ int	ft_printf(const char *input, ...)
 			i++;
 		}
 	}
-	va_end(args);
+	va_end(ar);
 	return (len);
 }

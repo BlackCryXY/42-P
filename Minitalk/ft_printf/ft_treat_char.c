@@ -6,13 +6,13 @@
 /*   By: tsantiag <tsantiag>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 09:31:05 by tsantiag          #+#    #+#             */
-/*   Updated: 2022/11/17 17:37:37 by tsantiag         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:39:15 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "../includes/ft_printf.h"
 
-int	ft_treat_char(char c, int *len)
+void	ft_treat_char(char c, int *len)
 {
 	write(1, &c, 1);
 	(*len)++;

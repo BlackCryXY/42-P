@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsantiag <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/21 14:27:05 by tsantiag          #+#    #+#             */
-/*   Updated: 2023/06/21 14:27:10 by tsantiag         ###   ########.fr       */
+/*   Created: 2022/11/18 16:46:07 by tsantiag          #+#    #+#             */
+/*   Updated: 2022/11/19 11:06:40 by tsantiag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../includes/ft_printf.h"
 
-#include "printf.h"
-
-void	ft_treat_pointer(size_t pointer, int len)
+void	ft_treat_pointer(size_t pointer, int *len)
 {
 	char	str[30];
 	int		i;
@@ -20,13 +19,13 @@ void	ft_treat_pointer(size_t pointer, int len)
 
 	base_char = "0123456789abcdef";
 	i = 0;
-	write(1, "0x", 2);
-	(*len) += 2;
 	if (pointer == 0)
 	{
-		ft_treat_char('0', len);
+		ft_treat_string("(nil)", len);
 		return ;
 	}
+	write(1, "0x", 2);
+	(*len) += 2;
 	while (pointer != 0)
 	{
 		str[i] = base_char[pointer % 16];

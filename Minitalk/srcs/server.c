@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/minitalk.h"
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 static unsigned char	*stock_message(unsigned char *str, unsigned char c)
 {
@@ -76,8 +76,8 @@ int	main(void)
 
 	sa.sa_sigaction = read_msg;
 	sa.sa_flags = SA_SIGINFO;
-	sigemptyset(sa.sa_mask);
-	ft_printf("PID: %d\n," getpid());
+	sigemptyset(&sa.sa_mask);
+	ft_printf("PID: %d\n", getpid());
 	sigaction(SIGUSR1, &sa, NULL);
 	sigaction(SIGUSR2, &sa, NULL);
 	while (1)
